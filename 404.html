@@ -10,6 +10,8 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       
+        <meta name="description" content="Linux 入门书籍，适用于「Debian/Ubuntu 相关发行版」">
+      
       
       
       
@@ -31,7 +33,7 @@
       
         <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
       
-      <link rel="shortcut icon" href="/assets/images/favicon.png">
+      <link rel="shortcut icon" href="/linux-20/assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
@@ -40,12 +42,12 @@
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="/linux-20/assets/stylesheets/application.1b62728e.css">
       
       
     
     
-      <script src="/assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="/linux-20/assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
@@ -54,10 +56,35 @@
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
-    <link rel="stylesheet" href="/assets/fonts/material-icons.css">
+    <link rel="stylesheet" href="/linux-20/assets/fonts/material-icons.css">
     
     
     
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-159908880-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -68,6 +95,8 @@
     <svg class="md-svg">
       <defs>
         
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
         
       </defs>
     </svg>
@@ -80,7 +109,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="/." title="Linux 二零" class="md-header-nav__button md-logo">
+        <a href="https://itboon.github.io/linux-20/" title="Linux 二零" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -132,6 +161,28 @@
         
       </div>
       
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/itboon/linux-20" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    itboon/linux-20
+  </div>
+</a>
+          </div>
+        </div>
+      
     </div>
   </nav>
 </header>
@@ -150,13 +201,33 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="/." title="Linux 二零" class="md-nav__button md-logo">
+    <a href="https://itboon.github.io/linux-20/" title="Linux 二零" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
     Linux 二零
   </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/itboon/linux-20" title="前往 Github 仓库" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    itboon/linux-20
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -166,7 +237,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/." title="关于本书" class="md-nav__link">
+    <a href="/linux-20/." title="关于本书" class="md-nav__link">
       关于本书
     </a>
   </li>
@@ -178,7 +249,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/linux/linux/" title="Linux 基础组件" class="md-nav__link">
+    <a href="/linux-20/linux/linux/" title="Linux 基础组件" class="md-nav__link">
       Linux 基础组件
     </a>
   </li>
@@ -190,7 +261,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/linux/tty-shell/" title="终端和 shell" class="md-nav__link">
+    <a href="/linux-20/linux/tty-shell/" title="终端和 shell" class="md-nav__link">
       终端和 shell
     </a>
   </li>
@@ -202,7 +273,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/linux/choose-shell/" title="选择 shell" class="md-nav__link">
+    <a href="/linux-20/linux/choose-shell/" title="选择 shell" class="md-nav__link">
       选择 shell
     </a>
   </li>
@@ -233,7 +304,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/bash/basic-commands/" title="基础命令简介" class="md-nav__link">
+    <a href="/linux-20/bash/basic-commands/" title="基础命令简介" class="md-nav__link">
       基础命令简介
     </a>
   </li>
@@ -245,7 +316,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/bash/shell-env/" title="环境变量" class="md-nav__link">
+    <a href="/linux-20/bash/shell-env/" title="环境变量" class="md-nav__link">
       环境变量
     </a>
   </li>
@@ -257,7 +328,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/bash/shell-syntax/" title="shell 语法" class="md-nav__link">
+    <a href="/linux-20/bash/shell-syntax/" title="shell 语法" class="md-nav__link">
       shell 语法
     </a>
   </li>
@@ -269,7 +340,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/bash/shell-expansions/" title="shell 字符扩展" class="md-nav__link">
+    <a href="/linux-20/bash/shell-expansions/" title="shell 字符扩展" class="md-nav__link">
       shell 字符扩展
     </a>
   </li>
@@ -281,7 +352,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/bash/shell-redirect/" title="管道和重定向" class="md-nav__link">
+    <a href="/linux-20/bash/shell-redirect/" title="管道和重定向" class="md-nav__link">
       管道和重定向
     </a>
   </li>
@@ -293,7 +364,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/bash/shell-conditional/" title="shell 条件语句" class="md-nav__link">
+    <a href="/linux-20/bash/shell-conditional/" title="shell 条件语句" class="md-nav__link">
       shell 条件语句
     </a>
   </li>
@@ -305,7 +376,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/bash/shell-loop/" title="shell 循环语句" class="md-nav__link">
+    <a href="/linux-20/bash/shell-loop/" title="shell 循环语句" class="md-nav__link">
       shell 循环语句
     </a>
   </li>
@@ -317,7 +388,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/bash/exec-file/" title="执行文件" class="md-nav__link">
+    <a href="/linux-20/bash/exec-file/" title="执行文件" class="md-nav__link">
       执行文件
     </a>
   </li>
@@ -353,7 +424,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/file-permission/basic/" title="文件权限基础" class="md-nav__link">
+    <a href="/linux-20/file-permission/basic/" title="文件权限基础" class="md-nav__link">
       文件权限基础
     </a>
   </li>
@@ -365,7 +436,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/file-permission/chmod/" title="chmod 修改文件权限" class="md-nav__link">
+    <a href="/linux-20/file-permission/chmod/" title="chmod 修改文件权限" class="md-nav__link">
       chmod 修改文件权限
     </a>
   </li>
@@ -377,7 +448,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/file-permission/chown/" title="chown 修改文件归属" class="md-nav__link">
+    <a href="/linux-20/file-permission/chown/" title="chown 修改文件归属" class="md-nav__link">
       chown 修改文件归属
     </a>
   </li>
@@ -389,7 +460,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/file-permission/linux-fhs/" title="Linux 目录结构简介" class="md-nav__link">
+    <a href="/linux-20/file-permission/linux-fhs/" title="Linux 目录结构简介" class="md-nav__link">
       Linux 目录结构简介
     </a>
   </li>
@@ -425,7 +496,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/networking/iproute2/" title="网络工具 iproute2" class="md-nav__link">
+    <a href="/linux-20/networking/iproute2/" title="网络工具 iproute2" class="md-nav__link">
       网络工具 iproute2
     </a>
   </li>
@@ -437,7 +508,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/networking/configuration/" title="网络配置" class="md-nav__link">
+    <a href="/linux-20/networking/configuration/" title="网络配置" class="md-nav__link">
       网络配置
     </a>
   </li>
@@ -454,7 +525,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/installing-software/apt/" title="使用 apt 安装软件" class="md-nav__link">
+    <a href="/linux-20/installing-software/apt/" title="使用 apt 安装软件" class="md-nav__link">
       使用 apt 安装软件
     </a>
   </li>
@@ -466,7 +537,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/managing-user/user-and-group/" title="管理用户和组" class="md-nav__link">
+    <a href="/linux-20/managing-user/user-and-group/" title="管理用户和组" class="md-nav__link">
       管理用户和组
     </a>
   </li>
@@ -497,7 +568,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/systemd/systemd/" title="systemd 和 systemctl" class="md-nav__link">
+    <a href="/linux-20/systemd/systemd/" title="systemd 和 systemctl" class="md-nav__link">
       systemd 和 systemctl
     </a>
   </li>
@@ -509,7 +580,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/systemd/deploying-service/" title="基于 systemd 部署服务" class="md-nav__link">
+    <a href="/linux-20/systemd/deploying-service/" title="基于 systemd 部署服务" class="md-nav__link">
       基于 systemd 部署服务
     </a>
   </li>
@@ -545,7 +616,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/text-sculpting/grep-regexp/" title="grep 与正则表达式" class="md-nav__link">
+    <a href="/linux-20/text-sculpting/grep-regexp/" title="grep 与正则表达式" class="md-nav__link">
       grep 与正则表达式
     </a>
   </li>
@@ -557,7 +628,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/text-sculpting/sed/" title="sed 流编辑器" class="md-nav__link">
+    <a href="/linux-20/text-sculpting/sed/" title="sed 流编辑器" class="md-nav__link">
       sed 流编辑器
     </a>
   </li>
@@ -569,7 +640,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/text-sculpting/awk/" title="gawk 基础用法" class="md-nav__link">
+    <a href="/linux-20/text-sculpting/awk/" title="gawk 基础用法" class="md-nav__link">
       gawk 基础用法
     </a>
   </li>
@@ -605,7 +676,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/docker/docker/" title="初试 docker" class="md-nav__link">
+    <a href="/linux-20/docker/docker/" title="初试 docker" class="md-nav__link">
       初试 docker
     </a>
   </li>
@@ -617,7 +688,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/docker/docker-compose/" title="docker compose" class="md-nav__link">
+    <a href="/linux-20/docker/docker-compose/" title="docker compose" class="md-nav__link">
       docker compose
     </a>
   </li>
@@ -629,7 +700,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/docker/docker-lb/" title="反向代理和负载均衡" class="md-nav__link">
+    <a href="/linux-20/docker/docker-lb/" title="反向代理和负载均衡" class="md-nav__link">
       反向代理和负载均衡
     </a>
   </li>
@@ -683,26 +754,26 @@
       
     </div>
     
-      <script src="/assets/javascripts/application.808e90bb.js"></script>
+      <script src="/linux-20/assets/javascripts/application.808e90bb.js"></script>
       
         
         
           
-          <script src="/assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          <script src="/linux-20/assets/javascripts/lunr/lunr.stemmer.support.js"></script>
           
             
               
-                <script src="/assets/javascripts/lunr/tinyseg.js"></script>
+                <script src="/linux-20/assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="/assets/javascripts/lunr/lunr.ja.js"></script>
+                <script src="/linux-20/assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
           
         
       
-      <script>app.initialize({version:"1.0.4",url:{base:"/"}})</script>
+      <script>app.initialize({version:"1.0.4",url:{base:"/linux-20/"}})</script>
       
     
   </body>
