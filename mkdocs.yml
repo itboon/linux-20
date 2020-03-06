@@ -1,14 +1,26 @@
-site_name: "Linux 二零"
+# Project information
+site_name: 'Linux 二零'
+site_description: 'Linux 入门书籍，适用于「Debian/Ubuntu 相关发行版」'
+site_url: 'https://itboon.github.io/linux-20/'
 
 theme:
     name: 'material'
     language: 'zh'
 
 markdown_extensions:
-  - codehilite
-  - admonition
+  - 'codehilite'
+  - 'admonition'
 
-dev_addr: 127.0.0.1:7001
+dev_addr: '127.0.0.1:7001'
+
+# Repository
+repo_name: 'itboon/linux-20'
+repo_url: 'https://github.com/itboon/linux-20'
+edit_uri: ''
+
+google_analytics:
+  - 'UA-159908880-1'
+  - 'auto'
 
 # Page tree
 nav:
