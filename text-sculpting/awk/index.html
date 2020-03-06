@@ -1,0 +1,1131 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>gawk 基础用法 - Linux 二零</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#gawk" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Linux 二零" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Linux 二零
+            </span>
+            <span class="md-header-nav__topic">
+              
+                gawk 基础用法
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Linux 二零" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Linux 二零
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="关于本书" class="md-nav__link">
+      关于本书
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/linux/" title="Linux 基础组件" class="md-nav__link">
+      Linux 基础组件
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/tty-shell/" title="终端和 shell" class="md-nav__link">
+      终端和 shell
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/choose-shell/" title="选择 shell" class="md-nav__link">
+      选择 shell
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      bash shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        bash shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/basic-commands/" title="基础命令简介" class="md-nav__link">
+      基础命令简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-env/" title="环境变量" class="md-nav__link">
+      环境变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-syntax/" title="shell 语法" class="md-nav__link">
+      shell 语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-expansions/" title="shell 字符扩展" class="md-nav__link">
+      shell 字符扩展
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-redirect/" title="管道和重定向" class="md-nav__link">
+      管道和重定向
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-conditional/" title="shell 条件语句" class="md-nav__link">
+      shell 条件语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-loop/" title="shell 循环语句" class="md-nav__link">
+      shell 循环语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/exec-file/" title="执行文件" class="md-nav__link">
+      执行文件
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      文件权限
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        文件权限
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/basic/" title="文件权限基础" class="md-nav__link">
+      文件权限基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/chmod/" title="chmod 修改文件权限" class="md-nav__link">
+      chmod 修改文件权限
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/chown/" title="chown 修改文件归属" class="md-nav__link">
+      chown 修改文件归属
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/linux-fhs/" title="Linux 目录结构简介" class="md-nav__link">
+      Linux 目录结构简介
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      管理网络
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        管理网络
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../networking/iproute2/" title="网络工具 iproute2" class="md-nav__link">
+      网络工具 iproute2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../networking/configuration/" title="网络配置" class="md-nav__link">
+      网络配置
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installing-software/apt/" title="使用 apt 安装软件" class="md-nav__link">
+      使用 apt 安装软件
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../managing-user/user-and-group/" title="管理用户和组" class="md-nav__link">
+      管理用户和组
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      systemd
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        systemd
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systemd/systemd/" title="systemd 和 systemctl" class="md-nav__link">
+      systemd 和 systemctl
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systemd/deploying-service/" title="基于 systemd 部署服务" class="md-nav__link">
+      基于 systemd 部署服务
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+    
+    <label class="md-nav__link" for="nav-11">
+      文本处理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        文本处理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../grep-regexp/" title="grep 与正则表达式" class="md-nav__link">
+      grep 与正则表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../sed/" title="sed 流编辑器" class="md-nav__link">
+      sed 流编辑器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        gawk 基础用法
+      </label>
+    
+    <a href="./" title="gawk 基础用法" class="md-nav__link md-nav__link--active">
+      gawk 基础用法
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gawk_1" class="md-nav__link">
+    gawk 正则表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gawk-grep-sed" class="md-nav__link">
+    gawk 代替 grep 和 sed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    字段分割
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    按指定数据字段进行匹配
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    数学表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    布尔表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printf" class="md-nav__link">
+    printf 格式化打印
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk 语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#awk_1" class="md-nav__link">
+    awk 其他进阶用法
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker/" title="初试 docker" class="md-nav__link">
+      初试 docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker-compose/" title="docker compose" class="md-nav__link">
+      docker compose
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker-lb/" title="反向代理和负载均衡" class="md-nav__link">
+      反向代理和负载均衡
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gawk_1" class="md-nav__link">
+    gawk 正则表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gawk-grep-sed" class="md-nav__link">
+    gawk 代替 grep 和 sed
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    字段分割
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    按指定数据字段进行匹配
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    数学表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    布尔表达式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#printf" class="md-nav__link">
+    printf 格式化打印
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#awk" class="md-nav__link">
+    awk 语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#awk_1" class="md-nav__link">
+    awk 其他进阶用法
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="gawk">gawk 基础用法</h1>
+<p>awk 是一款用于处理文本的编程语言工具。它提供了比较强大的功能：可以进行正则表达式的匹配，流控制、数学运算符、进程控制语句还有内置的变量和函数。</p>
+<p>gawk 即 GNU awk，是许多 Linux 发行版默认的 awk 程序。</p>
+<h2 id="_1">安装</h2>
+<div class="codehilite"><pre><span></span>sudo apt install gawk
+</pre></div>
+
+
+<h2 id="gawk_1">gawk 正则表达式</h2>
+<p>gawk 使用 ERE 语法，与  <a href="../grep-regexp">grep ERE 语法</a> 基本一致，有两点需要注意：</p>
+<ul>
+<li>awk 正则表达式写在 2 个 <code>/</code> 中间，书写普通斜杠符号需要加转义字符：<code>\/</code>。</li>
+<li>因为 <code>\b</code> 在 awk 语言里被定义为 backspace，所以 gawk 使用 <code>\y</code> 代替 <code>\b</code> 作为锚点符号，匹配单词的边缘。</li>
+</ul>
+<h2 id="gawk-grep-sed">gawk 代替 grep 和 sed</h2>
+<p>gawk 可以用于文本搜索和文本替换，一定程度上可代替 grep 和 sed，请看下面的例子。</p>
+<p>用于文本搜索：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 查看发行版</span>
+cat /etc/os-release <span class="p">|</span> gawk <span class="s1">&#39;/PRETTY/&#39;</span>
+cat /etc/os-release <span class="p">|</span> grep <span class="s1">&#39;PRETTY&#39;</span>
+
+<span class="c1"># 过滤注释行或空白行</span>
+cat ~/.profile <span class="p">|</span> gawk <span class="s1">&#39;!/^\s*(#|$)/&#39;</span>
+cat ~/.profile <span class="p">|</span> egrep -v <span class="s1">&#39;^\s*(#|$)&#39;</span>
+</pre></div>
+
+
+<p>用于文本替换：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;A beautiful girl&quot;</span> <span class="p">|</span> gawk <span class="s1">&#39;{gsub(/girl/,&quot;woman&quot;); print $0}&#39;</span>
+<span class="go">A beautiful woman</span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;A beautiful girl&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/girl/woman/&#39;</span>
+<span class="go">A beautiful woman</span>
+</pre></div>
+
+
+<p>gawk 是比较全能的文本处理工具，但是在一些基本的用途中，其简洁性不如 grep 和 sed，如何选择则根据个人习惯。</p>
+<h2 id="_2">字段分割</h2>
+<p>awk 根据字段分割符划分文本行，并将如下变量分配给数据字段：</p>
+<ul>
+<li><code>$0</code> 代表整行文本</li>
+<li><code>$1</code> 代表行中的第 1 个数据字段</li>
+<li><code>$2</code> 代表行中的第 2 个数据字段</li>
+<li><code>$n</code> 代表行中的第 n 个数据字段</li>
+</ul>
+<p>默认的分割符是空格或者制表符，可以使用 <code>-F</code> 选项指定分割符，请看下面的例子：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 使用默认分割符，打印第二个字段</span>
+cat /etc/apt/sources.list <span class="p">|</span> gawk <span class="s1">&#39;{print $2}&#39;</span>
+
+<span class="c1"># 指定分割符，打印第一个字段</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;{print $1}&#39;</span>
+</pre></div>
+
+
+<h3 id="_3">按指定数据字段进行匹配</h3>
+<p>awk 可以指定数据字段进行文本匹配，而不是整行匹配，请看下面的例子：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 搜索包含 bin 的行</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;/bin/&#39;</span>
+
+<span class="c1"># 搜索第一个字段包含 bin 的行，即用户名包含 bin</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$1 ~ /bin/&#39;</span>
+</pre></div>
+
+
+<h2 id="_4">数学表达式</h2>
+<p>数学表达式支持 <code>==</code> <code>&gt;</code> <code>&gt;=</code> <code>&lt;</code> <code>&lt;=</code> 这些数学符号，例如：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 找出 uid 大于等于 1000 的用户</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$3 &gt;= 1000&#39;</span>
+</pre></div>
+
+
+<p><code>==</code> 也可以用于字符串精确匹配，例如：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 使用数学表达式找出 bin 用户</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$1 == &quot;bin&quot;&#39;</span>
+
+<span class="c1"># 使用正则表达式找出 bin 用户</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$1 ~ /^bin$/&#39;</span>
+</pre></div>
+
+
+<h2 id="_5">布尔表达式</h2>
+<p>布尔操作符 <code>||</code> (or), <code>&amp;&amp;</code> (and), <code>!</code> (not), 例如：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 大于等于 1000 或等于 0</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$3 &gt;= 1000 || $3 == 0&#39;</span>
+
+<span class="c1"># 大于等于 1000 或且小于 2000</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$3 &gt;= 1000 &amp;&amp; $3 &lt; 2000&#39;</span>
+
+<span class="c1"># 不小于 1000</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;!($3 &lt; 1000)&#39;</span>
+
+<span class="c1"># 不匹配三位数及以下</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$3 !~ /^[0-9]{1,3}$/&#39;</span>
+</pre></div>
+
+
+<h2 id="printf">printf 格式化打印</h2>
+<p>printf 支持更灵活的打印输出，例如：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 按指定宽度打印用户名和 uid，实现等宽排列</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;{printf &quot;%-20s %5s\n&quot;, $1, $3}&#39;</span>
+</pre></div>
+
+
+<p>将得到用户名和 uid 整齐的输出格式，如下所示：</p>
+<div class="codehilite"><pre><span></span><span class="err">root                     0</span>
+<span class="err">daemon                   1</span>
+<span class="err">nobody               65534</span>
+<span class="err">systemd-timesync       100</span>
+<span class="err">systemd-network        101</span>
+</pre></div>
+
+
+<p>gawk 中 printf 的用法跟C语言一样:</p>
+<div class="codehilite"><pre><span></span><span class="err">printf &quot;%-20s %5s\n&quot;, $1, $3</span>
+</pre></div>
+
+
+<p>这个例子中 2 个 <code>%s</code> 是字符串指示符，输出时被后面对应位置的变量替换，中间的数字 <code>20</code> 和 <code>5</code> 代表输出字段的最小宽度，默认右对其，数字前加 <code>-</code> 代表左对其。</p>
+<p>下面再看一个例子：</p>
+<div class="codehilite"><pre><span></span>cat /etc/group <span class="p">|</span> gawk -F : <span class="s1">&#39;{printf &quot;%-20s %-10s Members: %s\n&quot;, $1, $3, $4}&#39;</span>
+</pre></div>
+
+
+<p>将得到组名，gid，组成员整齐的输出格式，如下所示：</p>
+<div class="codehilite"><pre><span></span><span class="err">root                 0          Members: </span>
+<span class="err">ssl-cert             109        Members: postgres</span>
+<span class="err">scanner              119        Members: saned,jack</span>
+<span class="err">docker               130        Members: jack</span>
+</pre></div>
+
+
+<h2 id="awk">awk 语法</h2>
+<p>运行 awk：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 命令行运行</span>
+awk <span class="s1">&#39;program&#39;</span> input-file1 input-file2 …
+
+<span class="c1"># 从程序源文件运行，使用 -f 选项</span>
+awk -f program-file input-file1 input-file2 …
+</pre></div>
+
+
+<p>awk program 格式：</p>
+<div class="codehilite"><pre><span></span><span class="err">pattern { action }</span>
+<span class="err">pattern { action }</span>
+<span class="err">…</span>
+</pre></div>
+
+
+<p>案例：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 以下几种写法效果一样</span>
+awk -F : <span class="s1">&#39;$3 &gt;= 1000 {print}&#39;</span> /etc/passwd
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$3 &gt;= 1000 {print}&#39;</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$3 &gt;= 1000 {print $0}&#39;</span>
+<span class="c1"># {print} 等同于 {print $0}，可省略不写</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;$3 &gt;= 1000&#39;</span>
+</pre></div>
+
+
+<h2 id="awk_1">awk 其他进阶用法</h2>
+<div class="codehilite"><pre><span></span><span class="c1"># if 语句</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;{if ($1 == &quot;bin&quot;) print $0}&#39;</span>
+
+<span class="c1"># 调用 shell 环境变量</span>
+cat /etc/passwd <span class="p">|</span> gawk -F : <span class="s1">&#39;{if ($1 == ENVIRON[&quot;USER&quot;]) print $0}&#39;</span>
+
+<span class="c1"># 字符函数，转换为小写字母</span>
+cat /etc/os-release <span class="p">|</span> gawk <span class="s1">&#39;tolower($0) ~ /pretty/&#39;</span>
+env <span class="p">|</span> gawk <span class="s1">&#39;{print tolower($0)}&#39;</span>
+</pre></div>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../sed/" title="sed 流编辑器" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                sed 流编辑器
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../docker/docker/" title="初试 docker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                初试 docker
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

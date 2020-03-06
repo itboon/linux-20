@@ -1,0 +1,1306 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>基础命令简介 - Linux 二零</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#shell" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Linux 二零" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Linux 二零
+            </span>
+            <span class="md-header-nav__topic">
+              
+                基础命令简介
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Linux 二零" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Linux 二零
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="关于本书" class="md-nav__link">
+      关于本书
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/linux/" title="Linux 基础组件" class="md-nav__link">
+      Linux 基础组件
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/tty-shell/" title="终端和 shell" class="md-nav__link">
+      终端和 shell
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/choose-shell/" title="选择 shell" class="md-nav__link">
+      选择 shell
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      bash shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        bash shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        基础命令简介
+      </label>
+    
+    <a href="./" title="基础命令简介" class="md-nav__link md-nav__link--active">
+      基础命令简介
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#echo-cd-pwd-ls-cat" class="md-nav__link">
+    最基础的命令 echo cd pwd ls cat
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简单创建文本文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls 显示更多信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    目录和文件操作
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln 创建文件链接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    查看文件内容
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-ps-kill" class="md-nav__link">
+    进程管理 top ps kill
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    查看系统资源
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#free" class="md-nav__link">
+    free
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    df
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    网络工具
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip-address" class="md-nav__link">
+    ip address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    curl 下载文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    tar 打包和压缩
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell-env/" title="环境变量" class="md-nav__link">
+      环境变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell-syntax/" title="shell 语法" class="md-nav__link">
+      shell 语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell-expansions/" title="shell 字符扩展" class="md-nav__link">
+      shell 字符扩展
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell-redirect/" title="管道和重定向" class="md-nav__link">
+      管道和重定向
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell-conditional/" title="shell 条件语句" class="md-nav__link">
+      shell 条件语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../shell-loop/" title="shell 循环语句" class="md-nav__link">
+      shell 循环语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../exec-file/" title="执行文件" class="md-nav__link">
+      执行文件
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      文件权限
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        文件权限
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/basic/" title="文件权限基础" class="md-nav__link">
+      文件权限基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/chmod/" title="chmod 修改文件权限" class="md-nav__link">
+      chmod 修改文件权限
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/chown/" title="chown 修改文件归属" class="md-nav__link">
+      chown 修改文件归属
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/linux-fhs/" title="Linux 目录结构简介" class="md-nav__link">
+      Linux 目录结构简介
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      管理网络
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        管理网络
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../networking/iproute2/" title="网络工具 iproute2" class="md-nav__link">
+      网络工具 iproute2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../networking/configuration/" title="网络配置" class="md-nav__link">
+      网络配置
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installing-software/apt/" title="使用 apt 安装软件" class="md-nav__link">
+      使用 apt 安装软件
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../managing-user/user-and-group/" title="管理用户和组" class="md-nav__link">
+      管理用户和组
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      systemd
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        systemd
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systemd/systemd/" title="systemd 和 systemctl" class="md-nav__link">
+      systemd 和 systemctl
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systemd/deploying-service/" title="基于 systemd 部署服务" class="md-nav__link">
+      基于 systemd 部署服务
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      文本处理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        文本处理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../text-sculpting/grep-regexp/" title="grep 与正则表达式" class="md-nav__link">
+      grep 与正则表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../text-sculpting/sed/" title="sed 流编辑器" class="md-nav__link">
+      sed 流编辑器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../text-sculpting/awk/" title="gawk 基础用法" class="md-nav__link">
+      gawk 基础用法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker/" title="初试 docker" class="md-nav__link">
+      初试 docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker-compose/" title="docker compose" class="md-nav__link">
+      docker compose
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker-lb/" title="反向代理和负载均衡" class="md-nav__link">
+      反向代理和负载均衡
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#echo-cd-pwd-ls-cat" class="md-nav__link">
+    最基础的命令 echo cd pwd ls cat
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    简单创建文本文件
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls" class="md-nav__link">
+    ls 显示更多信息
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    目录和文件操作
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ln" class="md-nav__link">
+    ln 创建文件链接
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    查看文件内容
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-ps-kill" class="md-nav__link">
+    进程管理 top ps kill
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    查看系统资源
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#free" class="md-nav__link">
+    free
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#df" class="md-nav__link">
+    df
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    网络工具
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ip-address" class="md-nav__link">
+    ip address
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    curl 下载文件
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tar" class="md-nav__link">
+    tar 打包和压缩
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="shell">shell 基础命令简介</h1>
+<h2 id="echo-cd-pwd-ls-cat">最基础的命令 echo cd pwd ls cat</h2>
+<ul>
+<li><code>echo</code> 显示一行文本</li>
+<li><code>cd</code> 切换目录</li>
+<li><code>pwd</code> 查看当前所在目录</li>
+<li><code>ls</code> 查看目录信息，通常用来查看目录下有哪些文件</li>
+<li><code>cat</code> 串联文件并打印，通常用来阅读文本文件</li>
+</ul>
+<p>例如：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;Basic Commands&quot;</span>
+<span class="go">Basic Commands</span>
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;查看文件&quot;</span>
+<span class="go">查看文件</span>
+<span class="gp">$</span>  cat /etc/os-release 
+<span class="go">PRETTY_NAME=&quot;Debian GNU/Linux 10 (buster)&quot;</span>
+<span class="go">NAME=&quot;Debian GNU/Linux&quot;</span>
+<span class="go">VERSION_ID=&quot;10&quot;</span>
+<span class="go">VERSION=&quot;10 (buster)&quot;</span>
+<span class="go">VERSION_CODENAME=buster</span>
+<span class="go">ID=debian</span>
+<span class="go">HOME_URL=&quot;https://www.debian.org/&quot;</span>
+<span class="go">SUPPORT_URL=&quot;https://www.debian.org/support&quot;</span>
+<span class="go">BUG_REPORT_URL=&quot;https://bugs.debian.org/&quot;</span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;切换到用户主目录&quot;</span>
+<span class="go">切换到用户主目录</span>
+<span class="gp">$</span>  <span class="nb">cd</span> ~
+<span class="gp">$</span>  
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;查看当前所在目录&quot;</span>
+<span class="go">查看当前所在目录</span>
+<span class="gp">$</span>  <span class="nb">pwd</span>
+<span class="go">/home/linux-20</span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;查看当前目录信息&quot;</span>
+<span class="go">查看当前目录信息</span>
+<span class="gp">$</span>  ls
+<span class="go">图片  文档  下载  音乐  桌面  backup  bin  download  lib</span>
+<span class="go">... </span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;查看根目录信息&quot;</span>
+<span class="go">查看根目录信息</span>
+<span class="gp">$</span>  ls /
+<span class="go">bin  dev  home  mnt  run  tmp  var  etc  lib  root  sbin  usr</span>
+<span class="go">... </span>
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>$</code> 是 shell 提示符，表示该行是 shell 命令，不以该符号开头的行是输出信息。上面第一行 <code>$  echo "Basic Commands"</code> 中 <code>echo "Basic Commands"</code> 是用户输入的命令，第二行 <code>Basic Commands</code> 是输出的信息。</p>
+</div>
+<h3 id="_1">简单创建文本文件</h3>
+<p><code>echo</code> 还可用于创建文本文件，请看下面的例子：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;some text&quot;</span> &gt; example.txt 
+<span class="gp">$</span>  cat example.txt 
+<span class="go">some text</span>
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;new text&quot;</span> &gt; example.txt 
+<span class="gp">$</span>  cat example.txt 
+<span class="go">new text</span>
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;append&quot;</span> &gt;&gt; example.txt
+<span class="gp">$</span>  cat example.txt 
+<span class="go">new text</span>
+<span class="go">append</span>
+</pre></div>
+
+
+<p>若文件已存在，使用 <code>&gt;</code> 总是覆盖文件，使用 <code>&gt;&gt;</code> 可附加一行。</p>
+<h3 id="ls">ls 显示更多信息</h3>
+<p>ls 最常用的选项有：</p>
+<ul>
+<li><code>-a</code> 显示所有文件，包括隐藏文件</li>
+<li><code>-l</code> 使用长列表格式，将显示更多文件信息</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  ls -al ~
+<span class="go">total 148</span>
+<span class="go">drwxr-xr-x 3 linux-20 linux-20  4096 Feb 16 14:11 .</span>
+<span class="go">drwxr-xr-x 9 root     root      4096 Feb 18 12:57 ..</span>
+<span class="go">-rw-r--r-- 1 linux-20 linux-20    70 Jan 19 17:21 .bash_aliases</span>
+<span class="go">-rw------- 1 linux-20 linux-20  1420 Feb 16 20:52 .bash_history</span>
+<span class="go">-rw-r--r-- 1 linux-20 linux-20   220 Jan 19 17:18 .bash_logout</span>
+<span class="go">-rw-r--r-- 1 linux-20 linux-20  3590 Jan 19 17:24 .bashrc</span>
+<span class="go">-rw-r--r-- 1 linux-20 linux-20   971 Jan 21 16:05 .profile</span>
+<span class="go">-rw------- 1 linux-20 linux-20  7537 Feb 16 13:18 .viminfo</span>
+<span class="go">-rw------- 1 linux-20 linux-20    82 Feb 16 14:11 .zsh_history</span>
+<span class="go">-rw-r--r-- 1 linux-20 linux-20  1295 Feb 16 14:06 .zshrc</span>
+<span class="go">-rw------- 1 linux-20 linux-20  1420 Feb 12 21:39 download</span>
+<span class="go">-rw------- 1 linux-20 linux-20  1420 Feb 16 20:56 project</span>
+<span class="go">...</span>
+</pre></div>
+
+
+<h2 id="_2">目录和文件操作</h2>
+<ul>
+<li><code>mkdir</code> 创建目录</li>
+<li><code>touch</code> 修改文件时间戳，也可用于创建空文件</li>
+<li><code>cp</code> 复制文件</li>
+<li><code>mv</code> 移动文件</li>
+<li><code>rm</code> 删除文件</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  mkdir linux-20
+<span class="gp">$</span>  <span class="nb">cd</span> linux-20
+<span class="gp">$</span>  
+<span class="gp">$</span>  touch foo
+<span class="gp">$</span>  cp foo foo-2
+<span class="gp">$</span>  ls
+<span class="go">foo  foo-2</span>
+<span class="gp">$</span>  mv foo bar
+<span class="gp">$</span>  ls
+<span class="go">bar  foo-2</span>
+<span class="gp">$</span>  rm bar foo-2
+</pre></div>
+
+
+<h3 id="ln">ln 创建文件链接</h3>
+<p><code>ln</code> 用于创建文件链接，默认创建硬链接，<code>ln -s</code> 可以创建软链接。请看下面的例子：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="c1"># 创建 foo 文件，并为其创建硬链接和软链接</span>
+<span class="gp">$</span>  touch foo
+<span class="gp">$</span>  ln foo foo-ln
+<span class="gp">$</span>  ln -s foo bar
+<span class="gp">$</span>  ls -l
+<span class="go">lrwxrwxrwx 1 linux-20 linux-20 3 Feb 18 16:49 bar -&gt; foo</span>
+<span class="go">-rw-r--r-- 2 linux-20 linux-20 0 Feb 18 16:49 foo</span>
+<span class="go">-rw-r--r-- 2 linux-20 linux-20 0 Feb 18 16:49 foo-ln</span>
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;text for foo&quot;</span> &gt; foo
+<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;append for bar&quot;</span> &gt;&gt; bar
+<span class="gp">$</span>  cat foo-ln
+<span class="go">text for foo</span>
+<span class="go">append for bar</span>
+<span class="gp">$</span>  cat bar
+<span class="go">text for foo</span>
+<span class="go">append for bar</span>
+</pre></div>
+
+
+<p><code>ls -l</code> 可以明显看到软链接的关系，而硬链接不能直观看出来。不管是硬链接还是软链接，都可以对其读写，使得一个文件有多个访问路径。</p>
+<h2 id="_3">查看文件内容</h2>
+<p>前面已经介绍了使用 <code>cat</code> 查看文件内容，<code>cat</code> 一次性将文件内容打印出来，如果文件有数页或更多时则不太好用。这里还有几个命令可以查看文件：</p>
+<ul>
+<li><code>more</code> 通过翻页的形式查看文件</li>
+<li><code>head</code> 查看文件开头几行</li>
+<li><code>tail</code> 查看文件末尾几行</li>
+</ul>
+<p><code>head</code> 和 <code>tail</code> 默认输出 10 行，使用 <code>-n</code> 参数可指定行数，例如 <code>head -n 1 /etc/os-release</code> 只输出第一行。</p>
+<h2 id="top-ps-kill">进程管理 top ps kill</h2>
+<p><code>top</code> 可查看所有进程和系统资源信息，进入后可翻页，按 <code>q</code> 退出。</p>
+<p><code>ps</code> 可以查看当前进程 (当前 shell 进程和此时运行的 ps 进程)，<code>ps -ef</code> 可以查看所有进程并输出更多信息。</p>
+<p><code>pgrep</code> 可以根据名称搜索进程，<code>pgrep -l firefox</code> 搜索包含关键字 firefox 的进程。<code>-l</code> 仅显示进程名，需要完整显示进程可使用 <code>-a</code> (显示进程完整路径和参数)。默认只匹配进程名 (<code>-l</code> 显示的字串)，<code>-f</code> 可完整匹配 (<code>-a</code> 显示的字串)。请看下面的例子：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  pgrep -l firefox
+<span class="go">26658 firefox-esr</span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  pgrep -lf firefox
+<span class="go">26658 firefox-esr</span>
+<span class="go">26705 Web Content</span>
+<span class="go">26747 Web Content</span>
+<span class="go">26908 WebExtensions</span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  pgrep -af firefox
+<span class="go">26658 /usr/lib/firefox-esr/firefox-esr</span>
+<span class="go">26705 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 188430 -parentBuildID 20200206211857 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appdir /usr/lib/firefox-esr/browser 26658 true tab</span>
+<span class="go">...</span>
+</pre></div>
+
+
+<p><code>kill &lt;pid&gt;</code> 可终止进程，<code>kill -9 &lt;pid&gt;</code> 可强制杀死进程，pid 可通过 <code>top</code>、<code>ps</code>、<code>pgrep</code> 看到。</p>
+<h2 id="_4">查看系统资源</h2>
+<h3 id="free">free</h3>
+<p><code>free</code> 可查看物理内存和 swap 使用情况，默认输出的数据以 KB 为单位，<code>-h</code> 选项自动进行单位换算使输出结果便于阅读，<code>-w</code> 支持宽列表输出，输出信息如下：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  free -hw
+<span class="go">              total        used        free      shared     buffers       cache   available</span>
+<span class="go">Mem:          7.7Gi       4.3Gi       1.2Gi       544Mi       629Mi       1.5Gi       2.6Gi</span>
+<span class="go">Swap:          14Gi       853Mi        14Gi</span>
+</pre></div>
+
+
+<p>下面是输出信息中的部分字段的解释：</p>
+<ul>
+<li><code>total</code> 总内存容量。</li>
+<li><code>free</code> 空闲的内存。</li>
+<li><code>cache</code> 用于读取磁盘的内存缓存 (page cache and slabs)。这些内存可自动回收以供新的程序运行。</li>
+<li><code>available</code> 系统评估的可供运行新程序的内存容量 (MemAvailable in /proc/meminfo)</li>
+</ul>
+<h3 id="df">df</h3>
+<p><code>df</code> 可查看磁盘使用情况，<code>-h</code> 选项自动进行单位换算使输出结果便于阅读，<code>-T</code> 选项输出文件系统类型，输出信息如下：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  df -hT
+<span class="go">Filesystem            Type      Size  Used Avail Use% Mounted on</span>
+<span class="go">/dev/mapper/VG01-root ext4       28G   11G   16G  41% /</span>
+<span class="go">/dev/sda1             ext2      938M  109M  782M  13% /boot</span>
+<span class="go">/dev/sda2             vfat      953M   32M  921M   4% /boot/efi</span>
+<span class="go">/dev/mapper/VG01-var  ext4       55G   10G   43G  20% /var</span>
+<span class="go">/dev/mapper/VG01-home ext4      314G  217G   82G  73% /home</span>
+<span class="go">tmpfs                 tmpfs     3.9G  174M  3.7G   5% /dev/shm</span>
+<span class="go">…</span>
+</pre></div>
+
+
+<h2 id="_5">网络工具</h2>
+<h3 id="ip-address">ip address</h3>
+<p><code>ip address</code> 可查看网络接口和「ip地址」，输出信息如下：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  ip address
+<span class="go">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span>
+<span class="go">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span>
+<span class="go">    inet 127.0.0.1/8 scope host lo</span>
+<span class="go">       valid_lft forever preferred_lft forever</span>
+<span class="go">2: enp2s0: &lt;NO-CARRIER,BROADCAST,MULTICAST,UP&gt; mtu 1500 qdisc fq state DOWN group default qlen 1000</span>
+<span class="go">    link/ether 68:f7:28:44:ff:25 brd ff:ff:ff:ff:ff:ff</span>
+<span class="go">3: wlp3s0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc mq state UP group default qlen 1000</span>
+<span class="go">    link/ether d0:7e:35:6a:df:ec brd ff:ff:ff:ff:ff:ff</span>
+<span class="go">    inet 192.168.3.4/24 brd 192.168.3.255 scope global dynamic noprefixroute wlp3s0</span>
+<span class="go">       valid_lft 598755sec preferred_lft 598755sec</span>
+<span class="gp">$</span>  
+</pre></div>
+
+
+<h3 id="curl">curl 下载文件</h3>
+<p>下载文件可使用 <code>curl</code> 工具，命令格式如下：</p>
+<div class="codehilite"><pre><span></span>curl https://github.com/itboon/storage/raw/master/vim/vimrc -L -o vimrc.tmp
+</pre></div>
+
+
+<p><code>curl</code> 默认只将数据打印出来，<code>-o</code> 用于保存为文件。<code>-L</code> 用于支持网页重定向。</p>
+<h2 id="tar">tar 打包和压缩</h2>
+<p><code>tar</code> 是一款打包工具，打包后的文件称为「tar包」。下面是最常用的几项操作：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 将 foo 目录打包为 foo.tar</span>
+tar -c -f foo.tar foo
+
+<span class="c1"># 打包并使用 gzip 压缩</span>
+tar -c -g -f foo.tar.gz foo
+
+<span class="c1"># 列出「tar包」里面的文件</span>
+tar -t -f foo.tar
+
+<span class="c1"># 从「tar包」释放文件</span>
+tar -x -f foo.tar
+
+<span class="c1"># 释放文件到指定文件夹</span>
+tar -x -f foo.tar -C /tmp
+</pre></div>
+
+
+<p>选项解释：</p>
+<ul>
+<li><code>-c</code> 创建「tar包」。</li>
+<li><code>-t</code> 列出「tar包」里面的文件。</li>
+<li><code>-x</code> 从「tar包」释放文件。</li>
+<li><code>-f</code> 指定「tar包」文件名。</li>
+</ul>
+<p><code>tar</code> 还支持简洁的写法，例如：</p>
+<div class="codehilite"><pre><span></span>tar cf foo.tar foo
+tar tf foo.tar
+tar xf foo.tar
+</pre></div>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../linux/choose-shell/" title="选择 shell" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                选择 shell
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../shell-env/" title="环境变量" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                环境变量
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

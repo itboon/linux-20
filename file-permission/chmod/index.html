@@ -1,0 +1,981 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>chmod 修改文件权限 - Linux 二零</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#chmod" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Linux 二零" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Linux 二零
+            </span>
+            <span class="md-header-nav__topic">
+              
+                chmod 修改文件权限
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Linux 二零" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Linux 二零
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="关于本书" class="md-nav__link">
+      关于本书
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/linux/" title="Linux 基础组件" class="md-nav__link">
+      Linux 基础组件
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/tty-shell/" title="终端和 shell" class="md-nav__link">
+      终端和 shell
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/choose-shell/" title="选择 shell" class="md-nav__link">
+      选择 shell
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      bash shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        bash shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/basic-commands/" title="基础命令简介" class="md-nav__link">
+      基础命令简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-env/" title="环境变量" class="md-nav__link">
+      环境变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-syntax/" title="shell 语法" class="md-nav__link">
+      shell 语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-expansions/" title="shell 字符扩展" class="md-nav__link">
+      shell 字符扩展
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-redirect/" title="管道和重定向" class="md-nav__link">
+      管道和重定向
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-conditional/" title="shell 条件语句" class="md-nav__link">
+      shell 条件语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-loop/" title="shell 循环语句" class="md-nav__link">
+      shell 循环语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/exec-file/" title="执行文件" class="md-nav__link">
+      执行文件
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
+    
+    <label class="md-nav__link" for="nav-6">
+      文件权限
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        文件权限
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../basic/" title="文件权限基础" class="md-nav__link">
+      文件权限基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        chmod 修改文件权限
+      </label>
+    
+    <a href="./" title="chmod 修改文件权限" class="md-nav__link md-nav__link--active">
+      chmod 修改文件权限
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chmod_1" class="md-nav__link">
+    chmod 符号模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chmod_2" class="md-nav__link">
+    chmod 数字模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    目录递归
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../chown/" title="chown 修改文件归属" class="md-nav__link">
+      chown 修改文件归属
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../linux-fhs/" title="Linux 目录结构简介" class="md-nav__link">
+      Linux 目录结构简介
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      管理网络
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        管理网络
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../networking/iproute2/" title="网络工具 iproute2" class="md-nav__link">
+      网络工具 iproute2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../networking/configuration/" title="网络配置" class="md-nav__link">
+      网络配置
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installing-software/apt/" title="使用 apt 安装软件" class="md-nav__link">
+      使用 apt 安装软件
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../managing-user/user-and-group/" title="管理用户和组" class="md-nav__link">
+      管理用户和组
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      systemd
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        systemd
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systemd/systemd/" title="systemd 和 systemctl" class="md-nav__link">
+      systemd 和 systemctl
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systemd/deploying-service/" title="基于 systemd 部署服务" class="md-nav__link">
+      基于 systemd 部署服务
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      文本处理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        文本处理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../text-sculpting/grep-regexp/" title="grep 与正则表达式" class="md-nav__link">
+      grep 与正则表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../text-sculpting/sed/" title="sed 流编辑器" class="md-nav__link">
+      sed 流编辑器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../text-sculpting/awk/" title="gawk 基础用法" class="md-nav__link">
+      gawk 基础用法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker/" title="初试 docker" class="md-nav__link">
+      初试 docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker-compose/" title="docker compose" class="md-nav__link">
+      docker compose
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/docker-lb/" title="反向代理和负载均衡" class="md-nav__link">
+      反向代理和负载均衡
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    语法
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chmod_1" class="md-nav__link">
+    chmod 符号模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chmod_2" class="md-nav__link">
+    chmod 数字模式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    目录递归
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="chmod">chmod 修改文件权限</h1>
+<p>chmod - change file mode bits</p>
+<p><code>chmod</code> 用于修改文件权限，普通用户可以修改自己的文件权限，root 可以修改任意文件权限。</p>
+<h2 id="_1">语法</h2>
+<div class="codehilite"><pre><span></span><span class="n">chmod</span><span class="w"> </span><span class="o">[</span><span class="n">OPTION</span><span class="o">]</span><span class="p">...</span><span class="w"> </span><span class="n">MODE</span><span class="o">[</span><span class="n">,MODE</span><span class="o">]</span><span class="p">...</span><span class="w"> </span><span class="k">FILE</span><span class="p">...</span><span class="w"></span>
+</pre></div>
+
+
+<h2 id="chmod_1">chmod 符号模式</h2>
+<p>符号模式看上去非常直观，下面是几个简单的例子：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 设置所有用户可读写</span>
+chmod <span class="nv">a</span><span class="o">=</span>rw file
+
+<span class="c1"># 清空其他用户的写权限</span>
+chmod o-w file
+
+<span class="c1"># 增加 onwer 执行权限</span>
+chmod u+x file
+
+<span class="c1"># owner 可读写，group 和其他用户没有权限</span>
+chmod <span class="nv">u</span><span class="o">=</span>rw,go<span class="o">=</span> file
+</pre></div>
+
+
+<p>符号模式有三个部分，分别是用户、操作符和权限，可以使用如下字符：</p>
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">ugoa</span><span class="o">][</span><span class="n">+-=</span><span class="o">][</span><span class="n">rwxXst</span><span class="o">]</span><span class="w"></span>
+</pre></div>
+
+
+<p>用户部分：</p>
+<ul>
+<li><code>u</code> user (onwer)</li>
+<li><code>g</code> group</li>
+<li><code>o</code> 其他用户</li>
+<li><code>a</code> 所有用户，等同于 <code>ugo</code></li>
+</ul>
+<p>操作符：</p>
+<ul>
+<li><code>+</code> 增加新权限</li>
+<li><code>-</code> 删除已有权限 </li>
+<li><code>=</code> 修改权限，<code>=</code> 后面留空表示修改后的权限为空</li>
+</ul>
+<p>权限部分可以使用常规的权限符号 <code>rwx</code>，和特殊权限符号 <code>st</code>。另外还可以使用大写 <code>X</code> 代替小写 <code>x</code>。大写 <code>X</code> 只对目录和已有执行权限的文件有效果，请看下面的例子：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  mkdir foo<span class="p">;</span> touch foo.txt
+<span class="gp">$</span>  chmod o-x foo foo.txt
+<span class="gp">$</span>  ls -l
+<span class="go">drwxr-xr-- 2 linux-20 linux-20 4096 1月  17 13:56 foo</span>
+<span class="go">-rw-r--r-- 1 linux-20 linux-20    0 1月  17 15:34 foo.txt</span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  chmod o+X foo foo.txt
+<span class="gp">$</span>  ls -l
+<span class="go">drwxr-xr-x 2 linux-20 linux-20 4096 1月  17 13:56 foo</span>
+<span class="go">-rw-r--r-- 1 linux-20 linux-20    0 1月  17 15:34 foo.txt</span>
+</pre></div>
+
+
+<p>上例中，对于目录文件 <code>foo</code>，<code>o+X</code> 等于 <code>o+x</code>；而对于没有执行权限的普通文件 <code>foo.txt</code>，<code>o+X</code> 没有效果。</p>
+<h2 id="chmod_2">chmod 数字模式</h2>
+<p>数字模式是一种替代方案，下面是一个简单的例子：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 将文件设置为 owner 可读写，其他用户具有只读权限</span>
+chmod <span class="m">644</span> file
+</pre></div>
+
+
+<p>数字模式需要将权限位转换为对应的数值，请看下面的对应关系：</p>
+<div class="codehilite"><pre><span></span><span class="err">数值</span>      <span class="err">权限</span>
+
+<span class="mi">4000</span>      <span class="k">Set</span> <span class="k">user</span> <span class="n">ID</span>
+<span class="mi">2000</span>      <span class="k">Set</span> <span class="k">group</span> <span class="n">ID</span>
+<span class="mi">1000</span>      <span class="err">防删标记</span>
+
+          <span class="o">#</span> <span class="k">owner</span><span class="err">：</span>
+ <span class="mi">400</span>      <span class="err">读</span>
+ <span class="mi">200</span>      <span class="err">写</span>
+ <span class="mi">100</span>      <span class="err">执行</span>
+
+          <span class="o">#</span> <span class="k">group</span><span class="p">:</span>
+  <span class="mi">40</span>      <span class="err">读</span>
+  <span class="mi">20</span>      <span class="err">写</span>
+  <span class="mi">10</span>      <span class="err">执行</span>
+
+          <span class="o">#</span> <span class="err">其他用户：</span>
+   <span class="mi">4</span>      <span class="err">读</span>
+   <span class="mi">2</span>      <span class="err">写</span>
+   <span class="mi">1</span>      <span class="err">执行</span>
+</pre></div>
+
+
+<p>需要哪些权限，就将对应的数值累加起来。比如 owner 读和写，group 读，其他用户读，即 <code>400 + 200 + 40 + 4 = 644</code>。</p>
+<p>实践案例：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  mkdir foo private public
+<span class="gp">$</span>  <span class="c1"># private 目录，只有 onwer 具有权限</span>
+<span class="gp">$</span>  chmod <span class="m">0700</span> private
+<span class="gp">$</span>  <span class="c1"># public 目录，所有用户具有权限，但只有 owner 可删除</span>
+<span class="gp">$</span>  chmod <span class="m">1777</span> public
+<span class="gp">$</span>  ls -l
+<span class="go">总用量 12</span>
+<span class="go">drwxr-xr-x 2 linux-20 linux-20 4096 1月  18 13:36 foo</span>
+<span class="go">drwx------ 2 linux-20 linux-20 4096 1月  18 13:36 private</span>
+<span class="go">drwxrwxrwt 2 linux-20 linux-20 4096 1月  18 13:36 public</span>
+</pre></div>
+
+
+<h2 id="_2">目录递归</h2>
+<p>修改目录权限时，默认只对目录本身有效，目录下的文件不受影响。<code>chmod -R</code> 递归修改目录下所有文件和子文件夹的权限。</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  mkdir -p private/foo
+<span class="gp">$</span>  touch private/foo.txt
+<span class="hll"><span class="gp">$</span>  chmod -R <span class="nv">u</span><span class="o">=</span>rwX,go<span class="o">=</span> private
+</span><span class="gp">$</span>  ls -l private
+<span class="hll"><span class="go">drwx------ 2 linux-20 linux-20 4096 1月  18 14:32 foo</span>
+</span><span class="hll"><span class="go">-rw------- 1 linux-20 linux-20    0 1月  18 14:32 foo.txt</span>
+</span></pre></div>
+
+
+<p>上例中创建了一个私有目录 <code>private</code>，并设置 owner 具有读写权限，其他用户不能访问。这里使用了 <code>u=rwX</code>，即目录具有 <code>rwx</code> 权限，而普通文件具有 <code>rw-</code> 权限。通过这个例子我们看到，递归修改目录权限时，使用大写 <code>X</code> 比较合适。</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../basic/" title="文件权限基础" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                文件权限基础
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../chown/" title="chown 修改文件归属" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                chown 修改文件归属
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

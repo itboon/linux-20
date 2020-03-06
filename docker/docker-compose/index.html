@@ -1,0 +1,1133 @@
+
+
+
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="复制">
+      
+        <meta name="lang:clipboard.copied" content="已复制">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
+      
+        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
+      
+        <meta name="lang:search.result.other" content="# 个符合条件的结果">
+      
+        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>docker compose - Linux 二零</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#docker-compose" tabindex="1" class="md-skip">
+        跳转至
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Linux 二零" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Linux 二零
+            </span>
+            <span class="md-header-nav__topic">
+              
+                docker compose
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            键入以开始搜索
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Linux 二零" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Linux 二零
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="关于本书" class="md-nav__link">
+      关于本书
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/linux/" title="Linux 基础组件" class="md-nav__link">
+      Linux 基础组件
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/tty-shell/" title="终端和 shell" class="md-nav__link">
+      终端和 shell
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/choose-shell/" title="选择 shell" class="md-nav__link">
+      选择 shell
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      bash shell
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        bash shell
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/basic-commands/" title="基础命令简介" class="md-nav__link">
+      基础命令简介
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-env/" title="环境变量" class="md-nav__link">
+      环境变量
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-syntax/" title="shell 语法" class="md-nav__link">
+      shell 语法
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-expansions/" title="shell 字符扩展" class="md-nav__link">
+      shell 字符扩展
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-redirect/" title="管道和重定向" class="md-nav__link">
+      管道和重定向
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-conditional/" title="shell 条件语句" class="md-nav__link">
+      shell 条件语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/shell-loop/" title="shell 循环语句" class="md-nav__link">
+      shell 循环语句
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../bash/exec-file/" title="执行文件" class="md-nav__link">
+      执行文件
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      文件权限
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        文件权限
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/basic/" title="文件权限基础" class="md-nav__link">
+      文件权限基础
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/chmod/" title="chmod 修改文件权限" class="md-nav__link">
+      chmod 修改文件权限
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/chown/" title="chown 修改文件归属" class="md-nav__link">
+      chown 修改文件归属
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../file-permission/linux-fhs/" title="Linux 目录结构简介" class="md-nav__link">
+      Linux 目录结构简介
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      管理网络
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        管理网络
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../networking/iproute2/" title="网络工具 iproute2" class="md-nav__link">
+      网络工具 iproute2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../networking/configuration/" title="网络配置" class="md-nav__link">
+      网络配置
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installing-software/apt/" title="使用 apt 安装软件" class="md-nav__link">
+      使用 apt 安装软件
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../managing-user/user-and-group/" title="管理用户和组" class="md-nav__link">
+      管理用户和组
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      systemd
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        systemd
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systemd/systemd/" title="systemd 和 systemctl" class="md-nav__link">
+      systemd 和 systemctl
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../systemd/deploying-service/" title="基于 systemd 部署服务" class="md-nav__link">
+      基于 systemd 部署服务
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      文本处理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        文本处理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../text-sculpting/grep-regexp/" title="grep 与正则表达式" class="md-nav__link">
+      grep 与正则表达式
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../text-sculpting/sed/" title="sed 流编辑器" class="md-nav__link">
+      sed 流编辑器
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../text-sculpting/awk/" title="gawk 基础用法" class="md-nav__link">
+      gawk 基础用法
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+    
+    <label class="md-nav__link" for="nav-12">
+      docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="初试 docker" class="md-nav__link">
+      初试 docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        docker compose
+      </label>
+    
+    <a href="./" title="docker compose" class="md-nav__link md-nav__link--active">
+      docker compose
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose" class="md-nav__link">
+    初试 compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wordpress" class="md-nav__link">
+    部署 WordPress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    自己构建 Image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose_1" class="md-nav__link">
+    compose 项目名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose_2" class="md-nav__link">
+    清理 compose
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../docker-lb/" title="反向代理和负载均衡" class="md-nav__link">
+      反向代理和负载均衡
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    安装
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose" class="md-nav__link">
+    初试 compose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wordpress" class="md-nav__link">
+    部署 WordPress
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    自己构建 Image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose_1" class="md-nav__link">
+    compose 项目名
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose_2" class="md-nav__link">
+    清理 compose
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="docker-compose">docker compose</h1>
+<p>compose 可以很方便地部署和管理多容器的应用程序，通过编写一个 YAML 文件，然后使用一条简单的命令就可以完成容器部署。</p>
+<h2 id="_1">安装</h2>
+<div class="codehilite"><pre><span></span>sudo apt install docker-compose
+</pre></div>
+
+
+<h2 id="compose">初试 compose</h2>
+<p>首先创建一个 compose 项目目录，并切换进去：</p>
+<div class="codehilite"><pre><span></span>mkdir -p ~/my-compose/mysql <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/my-compose/mysql
+</pre></div>
+
+
+<p>compose 的配置文件叫 compose file，使用 YAML 文件格式，通常命名为 <code>docker-compose.yml</code>。</p>
+<p>我们创建 <code>docker-compose.yml</code> 文件，内容如下：</p>
+<div class="codehilite"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="s">&quot;3.4&quot;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+
+  <span class="nt">db</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mysql:5.6</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">test_db:/var/lib/mysql</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="nt">MYSQL_ROOT_PASSWORD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">root</span>
+
+  <span class="nt">adminer</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">adminer</span>
+    <span class="nt">ports</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;8006:8080&quot;</span>
+
+<span class="nt">volumes</span><span class="p">:</span>
+  <span class="nt">test_db</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
+</pre></div>
+
+
+<p>启动 compose：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  sudo docker-compose up -d
+<span class="go">Creating network &quot;mysql_default&quot; with the default driver</span>
+<span class="go">Creating volume &quot;mysql_test_db&quot; with default driver</span>
+<span class="go">Creating mysql_db_1      ... done</span>
+<span class="go">Creating mysql_adminer_1 ... done</span>
+<span class="gp">$</span>  
+</pre></div>
+
+
+<p>现在可以通过 adminer web 页面管理 mysql 数据库。访问 <a href="http://your-docker-host:8006/">http://your-docker-host:8006/</a> ，输入服务器：<code>db</code> ，用户名和密码都是 <code>root</code> ，登录后可以创建一个数据库试试。</p>
+<p>上面的 compose file 定义了 2 个容器，<code>db</code> 和 <code>adminer</code>，它们可以互相解析得到 IP 地址。因此，adminer 可以直接用 <code>db</code> 作为目标主机名，连接 mysql。adminer 映射了一个端口 <code>"8006:8080"</code>，这样我们可以通过主机的 8006 端口访问 adminer。</p>
+<p>接下来我们把 compose file <code>image: mysql:5.6</code> 改成 <code>image: mysql:5.7</code> ，然后启动 compose：</p>
+<div class="codehilite"><pre><span></span>$  sudo docker-compose up -d
+Recreating mysql_db_1 ... 
+Recreating mysql_db_1 ... <span class="k">done</span>
+$  
+</pre></div>
+
+
+<p>adminer 容器没有变更，会继续运行。db 容器使用了新版本的 image，会进行删除重建，这也就完成了升级操作。因为 mysql 的数据目录挂载了 volume，新的 mysql 容器会继续使用这个 volume，数据是持久保存的。对 docker image 进行升级是非常容易的，但是用户需要评估自己的环境是否可以升级。上面的例子，如果把 mysql 版本改成 <code>8.0</code> 就会出问题，这里我们不延伸讨论如何升级 mysql。</p>
+<p>我们再看看 compose 其他常用的命令：</p>
+<div class="codehilite"><pre><span></span><span class="go">列出容器</span>
+<span class="gp">$</span>  sudo docker-compose ps
+
+<span class="go">停止服务</span>
+<span class="gp">$</span>  sudo docker-compose stop
+
+<span class="go">停止服务并删除资源，会删除启动时创建的容器和网络</span>
+<span class="gp">$</span>  sudo docker-compose down
+
+<span class="go">加上 -v 会把 volume 也一起删除，请慎重考虑再操作</span>
+<span class="gp">$</span>  sudo docker-compose down -v
+
+<span class="go">使用指定的 compose file</span>
+<span class="gp">$</span>  sudo docker-compose -f /foo/bar.yml up -d
+</pre></div>
+
+
+<p>通过实验我们看到，使用 compose 管理容器确实很方便，比直接使用 docker 容易多了。下面我们再来看一个 web + db 的典型案例。</p>
+<h2 id="wordpress">部署 WordPress</h2>
+<p>创建项目目录：</p>
+<div class="codehilite"><pre><span></span>mkdir -p ~/my-compose/wordpress <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/my-compose/wordpress 
+</pre></div>
+
+
+<p>写入 <code>docker-compose.yml</code> 文件，内容如下：</p>
+<div class="codehilite"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="s">&quot;3.4&quot;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+  <span class="nt">db</span><span class="p">:</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">mysql:5.7</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">db_data:/var/lib/mysql</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="nt">MYSQL_ROOT_PASSWORD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">somewordpress</span>
+      <span class="nt">MYSQL_DATABASE</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wordpress</span>
+      <span class="nt">MYSQL_USER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wordpress</span>
+      <span class="nt">MYSQL_PASSWORD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wordpress</span>
+
+  <span class="nt">wordpress</span><span class="p">:</span>
+    <span class="nt">depends_on</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">db</span>
+    <span class="nt">image</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wordpress</span>
+    <span class="nt">ports</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;8007:80&quot;</span>
+    <span class="nt">environment</span><span class="p">:</span>
+      <span class="nt">WORDPRESS_DB_HOST</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">db:3306</span>
+      <span class="nt">WORDPRESS_DB_USER</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wordpress</span>
+      <span class="nt">WORDPRESS_DB_PASSWORD</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wordpress</span>
+      <span class="nt">WORDPRESS_DB_NAME</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">wordpress</span>
+<span class="nt">volumes</span><span class="p">:</span>
+  <span class="nt">db_data</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
+</pre></div>
+
+
+<p>上面这个配置文件定义了好几个环境变量 <code>environment</code>，这是为 WordPress 连接数据库准备的。将配置文件写入容器会略显笨拙，通过环境变量传递参数就灵活多了。</p>
+<p>启动 compose：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  sudo docker-compose up -d
+<span class="go">Creating network &quot;wordpress_default&quot; with the default driver</span>
+<span class="go">Creating volume &quot;wordpress_db_data&quot; with default driver</span>
+<span class="go">Creating wordpress_db_1 ... done</span>
+<span class="go">Creating wordpress_wordpress_1 ... done</span>
+<span class="gp">$</span>  
+</pre></div>
+
+
+<p>启动完成后就可以使用 WordPress 了，通过映射的 <code>8007</code> 端口访问。很好很强大！但是使用 docker 渐渐就会发现，开箱即用的 image 是有限的，很多时候并没有合适的 image 供我们下载。这个问题也好解决，下面我们就来看一下自己构建 image 的案例。</p>
+<h2 id="image">自己构建 Image</h2>
+<p>创建项目目录:</p>
+<div class="codehilite"><pre><span></span>mkdir -p ~/my-compose/mkdocs <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/my-compose/mkdocs
+</pre></div>
+
+
+<p>写入 <code>docker-compose.yml</code>，内容如下：</p>
+<div class="codehilite"><pre><span></span><span class="nt">version</span><span class="p">:</span> <span class="s">&quot;3.4&quot;</span>
+
+<span class="nt">services</span><span class="p">:</span>
+  <span class="nt">mkdocs</span><span class="p">:</span>
+    <span class="nt">build</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">.</span>
+    <span class="nt">ports</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="s">&quot;8008:80&quot;</span>
+    <span class="nt">volumes</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">./:/mkdocs:ro</span>
+</pre></div>
+
+
+<p>上面这个 compose file 略有不同，它没有指定 <code>image</code>，而是改成了 <code>build: .</code>。这时，compose 会使用 <code>dockerfile</code> 构建 image。并且我们将当前的项目目录以只读权限挂载到容器的 <code>/mkdocs</code>。<code>dockerfile</code> 文件如下所示：</p>
+<div class="codehilite"><pre><span></span><span class="k">FROM</span> <span class="s">python:3.8</span>
+
+<span class="k">RUN</span> <span class="nb">set</span> -ex <span class="se">\</span>
+    <span class="p">;</span> pip config <span class="nb">set</span> global.index-url https://mirrors.aliyun.com/pypi/simple/ <span class="se">\</span>
+    <span class="p">;</span> pip install --no-cache-dir mkdocs mkdocs-material <span class="se">\</span>
+    <span class="p">;</span> mkdir -p /mkdocs
+
+<span class="k">WORKDIR</span><span class="s"> /mkdocs</span>
+<span class="k">EXPOSE</span><span class="s"> 80</span>
+
+<span class="k">CMD</span> <span class="p">[</span> <span class="s2">&quot;mkdocs&quot;</span><span class="p">,</span> <span class="s2">&quot;serve&quot;</span><span class="p">,</span> <span class="s2">&quot;-a&quot;</span><span class="p">,</span> <span class="s2">&quot;0.0.0.0:80&quot;</span> <span class="p">]</span>
+</pre></div>
+
+
+<p>这是一个简短的 dockerfile，主要有 2 个指令，<code>FROM</code> 和 <code>RUN</code>。FROM 指示基础 image，这里将基于 <code>python：3.8</code> 构建新的 image。RUN 执行 shell 命令，多条命令用分号隔开，这里主要就是安装 Mkdocs。<code>WORKDIR</code> <code>EXPOSE</code> 和 <code>CMD</code> 指示相关运行环境。这里不过多介绍 dockerfile，我们继续完成实验。</p>
+<p>创建 Mkdocs 项目文件并启动 compose：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 写入主配置文件 mkdocs.yml</span>
+cat &gt; mkdocs.yml <span class="s">&lt;&lt;EOF</span>
+<span class="s">site_name: &quot;My Docs&quot;</span>
+<span class="s">theme:</span>
+<span class="s">  name: &quot;material&quot;</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 创建 docs 目录</span>
+mkdir -p docs
+
+<span class="c1"># 在 docs 目录写入 markdown 文档</span>
+<span class="c1"># 这里从网络下载 2 个文档，也可以手写或拷贝自己的文档</span>
+curl -L https://github.com/mkdocs/mkdocs/raw/master/docs/index.md -o docs/index.md
+curl -L https://github.com/mkdocs/mkdocs/raw/master/docs/user-guide/writing-your-docs.md -o docs/guide.md
+
+<span class="c1"># 启动 compose</span>
+sudo docker-compose up -d --build
+</pre></div>
+
+
+<p>第一次启动会构建 image，速度由电脑性能和网速决定，我的电脑耗时 35 秒。构建完成后会在本地生成一个 image，compose 使用这个 image 启动容器。如果 dockerfile 变更了，再次启动 compose 会重新构建。启动完成后可以领略 Mkdocs 了，通过映射的 <code>8008</code> 端口访问。</p>
+<h2 id="compose_1">compose 项目名</h2>
+<p>compose 默认使用目录名作为项目名，我们通过一个小实验看看其中的陷阱。</p>
+<p>创建项目目录 <code>old-project</code>，写入 compose file 并启动 compose：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 创建项目目录</span>
+mkdir -p ~/my-compose/old-project <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ~/my-compose/old-project
+
+<span class="c1"># 创建 compose file</span>
+cat &gt; docker-compose.yml <span class="s">&lt;&lt;EOF</span>
+<span class="s">version: &quot;3.4&quot;</span>
+<span class="s">services:</span>
+<span class="s">  nginx:</span>
+<span class="s">    image: nginx</span>
+<span class="s">EOF</span>
+
+<span class="c1"># 启动 compose</span>
+sudo docker-compose up -d
+</pre></div>
+
+
+<p>得到如下输出：</p>
+<div class="codehilite"><pre><span></span><span class="err">Creating network &quot;old-project_default&quot; with the default driver</span>
+<span class="err">Creating old-project_nginx_1 ... done</span>
+</pre></div>
+
+
+<p>将项目目录重命名为 <code>new-project</code>，然后再次启动：</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> ~
+<span class="c1"># 重命名目录</span>
+mv ~/my-compose/old-project ~/my-compose/new-project
+<span class="nb">cd</span> ~/my-compose/new-project
+
+<span class="c1"># 启动 compose</span>
+sudo docker-compose up -d
+</pre></div>
+
+
+<p>得到如下输出：</p>
+<div class="codehilite"><pre><span></span><span class="err">Creating network &quot;new-project_default&quot; with the default driver</span>
+<span class="err">Creating new-project_nginx_1 ... done</span>
+</pre></div>
+
+
+<p>这是启动了一个新项目，因为目录名改了，项目名默认由目录名决定。要想继续管理 old-project 项目，需要这样操作：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 列出容器</span>
+sudo docker-compose -p old-project ps
+
+<span class="c1"># 停止服务并删除资源</span>
+sudo docker-compose -p old-project down
+</pre></div>
+
+
+<p>重命名目录会带来麻烦，我们可能不知不觉就去管理一个新项目了。如果我们每次都通过 <code>-p</code> 明确指定项目名，似乎有点心累。Github 上有人提议将项目名固定保存，但经过漫长的讨论仍然没有结果，我们继续观望吧。</p>
+<h2 id="compose_2">清理 compose</h2>
+<p>本节我们启动了几个 compose 项目，现在可以将它们逐一清理掉以释放资源。尤其是主机网络端口，我们经常会重复使用同一个端口，导致启动出错。切换到每个项目目录执行 <code>sudo docker-compose down -v</code>，注意，加上 <code>-v</code> 会将 volume 一起删除，数据库都灰飞烟灭了。</p>
+<p>本节我们创建了下列 compose 项目：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  ls ~/my-compose/
+<span class="go">mkdocs  mysql  new-project  wordpress</span>
+</pre></div>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../docker/" title="初试 docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  上一页
+                </span>
+                初试 docker
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../docker-lb/" title="反向代理和负载均衡" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  下一页
+                </span>
+                反向代理和负载均衡
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
