@@ -1,11 +1,11 @@
 # Project information
-site_name: 'Linux 二零'
+site_name: 'Debian/Ubuntu Book《Linux 二零》'
 site_description: 'Linux 入门书籍，适用于「Debian/Ubuntu 相关发行版」'
 site_url: 'https://itboon.github.io/linux-20/'
 
 theme:
-    name: 'material'
-    language: 'zh'
+  name: 'material'
+  language: 'zh'
 
 markdown_extensions:
   - 'codehilite'
