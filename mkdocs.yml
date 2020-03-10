@@ -43,9 +43,12 @@ nav:
       - 'chown 修改文件归属' : 'file-permission/chown.md'
       - 'Linux 目录结构简介' : 'file-permission/linux-fhs.md'
   - '管理网络':
-      - '网络工具 iproute2' : 'networking/iproute2.md'
-      - '网络配置' : 'networking/configuration.md'
-  - '使用 apt 安装软件': 'installing-software/apt.md'
+      - '配置网络' : 'network/configuration.md'
+      - 'iproute2' : 'network/iproute2.md'
+  - '软件包管理':
+    - '简介': 'package-management/overview.md'
+    - 'apt': 'package-management/apt.md'
+    - 'dpkg': 'package-management/dpkg.md'
   - '管理用户和组': 'managing-user/user-and-group.md'
   - 'systemd':
       - 'systemd 和 systemctl' : 'systemd/systemd.md'

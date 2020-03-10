@@ -1,6 +1,4 @@
-# 使用 apt
-
-"Advanced Package Tool" (APT) 是「Debian/Ubuntu 相关发行版」的「软件包管理器」。APT 通过自动化从预编译文件或通过编译源代码进行软件包的检索、配置和安装，使得管理操作系统上的软件变得简单。
+# 使用 apt 安装软件
 
 ## 常用命令
 
@@ -12,6 +10,7 @@
 - `show` - 显示软件包细节。
 - `install` - 安装软件包。
 - `remove` - 移除软件包。
+- `purge` - 移除软件包并删除配置文件。
 - `autoremove` - 卸载所有自动安装且不再使用的软件包。
 
 ## 示例
@@ -36,7 +35,7 @@ sudo apt upgrade
 
 ## 配置 apt 源
 
-apt 从一个或多个软件存储库（源）下载软件包并将其安装到您的计算机上。仓库通常是网络服务器，例如官方的DebianStable仓库。用户也可以配置国内的软件源（腾讯软件源，阿里云开源镜像站，清华大学开源软件镜像站），或者使用私有的服务器。
+apt 从一个或多个「软件仓库」(源) 下载软件包并将其安装到你的计算机上。源通常是网络服务器，例如官方的 DebianStable 仓库。因为网速问题，我们通常会选择国内的镜像服务器（腾讯软件源、阿里云开源镜像站、清华大学开源软件镜像站），或者使用私有的服务器。
 
 ### 配置国内镜像源
 
@@ -83,9 +82,11 @@ sudo apt update
 ```
 
 !!! note
-    `apt update` 根据 sources.list 更新可用软件包列表，修改配置文件后执行 `update` 才能正式生效。用户可以每次安装或升级软件时都执行一次 update，也可以仅在重要的操作前执行。本书其他地方可能会忽略这一步。
+    `apt update` 根据 sources.list 更新可用软件包列表，修改配置文件后执行 update 才能正式生效。用户可以每次安装或升级软件时都执行一次 update，也可以仅在重要的操作前执行。本书其他地方可能会忽略这一步。
 
-### 添加 vscode 源并安装
+### 添加第三方源
+
+下面是安装 vscode 的步骤：
 
 ``` shell
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
