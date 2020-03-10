@@ -1,8 +1,8 @@
-# 网络配置
+# 配置网络
 
 ## 选择网络配置工具
 
-尽管 iproute2 功能强大，但这种底层网络工具配置起来有些麻烦。通常情况下我们会选择容易操作的高级配置工具，目前流行的有以下几款：
+配置「Linux 操作系统」的网络有以下几款主流的配置工具可供选择：
 
 | 配置工具 | 简介 |
 | --- | --- |
@@ -13,7 +13,11 @@
 
 桌面环境建议使用 NetworkManager；在服务器上建议使用默认的配置工具，或者切换到 systemd-networkd。
 
-## 网络配置
+### iproute2
+
+iproute2 是「Linux 操作系统」上强大的网络工具，例如 `ip address`、`ip route` 命令可用于查看主机网络信息。但是这种底层网络工具配置起来有些麻烦，我们会在下一节介绍它。
+
+## 准备工作
 
 首先敲 `ip address` 查看一下网卡信息。
 
@@ -28,6 +32,8 @@ grep -v '^#' /etc/systemd/network/*.network /etc/network/interfaces /etc/netplan
 
 !!! warning
     通过网络连接到计算机时，进行网络配置要非常小心，操作不当将会很尴尬。
+
+## 配置网络
 
 ### systemd-networkd
 

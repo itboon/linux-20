@@ -61,9 +61,7 @@ $  ip neigh
 192.168.121.1 dev eth0 lladdr 52:54:00:cd:70:3a REACHABLE
 ```
 
-## 网络配置
-
-iproute2 是底层网络工具，经常用来查看系统网络信息。当涉及到系统网络配置，一般会选择高级网络配置工具，例如 systemd-networkd、NetworkManager。
+## 配置网络
 
 这里我们通过一个小实验简单了解一下 iproute2 如何配置网络：
 
