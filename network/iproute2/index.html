@@ -13,7 +13,7 @@
         <meta name="description" content="Linux 入门书籍，适用于「Debian/Ubuntu 相关发行版」">
       
       
-        <link rel="canonical" href="https://itboon.github.io/linux-20/networking/configuration/">
+        <link rel="canonical" href="https://itboon.github.io/linux-20/network/iproute2/">
       
       
       
@@ -40,7 +40,7 @@
     
     
       
-        <title>网络配置 - Debian/Ubuntu Book《Linux 二零》</title>
+        <title>iproute2 - Debian/Ubuntu Book《Linux 二零》</title>
       
     
     
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#iproute2" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -132,7 +132,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                网络配置
+                iproute2
               
             </span>
           
@@ -504,8 +504,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../iproute2/" title="网络工具 iproute2" class="md-nav__link">
-      网络工具 iproute2
+    <a href="../configuration/" title="配置网络" class="md-nav__link">
+      配置网络
     </a>
   </li>
 
@@ -525,11 +525,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        网络配置
+        iproute2
       </label>
     
-    <a href="./" title="网络配置" class="md-nav__link md-nav__link--active">
-      网络配置
+    <a href="./" title="iproute2" class="md-nav__link md-nav__link--active">
+      iproute2
     </a>
     
       
@@ -543,70 +543,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    语法介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    选择网络配置工具
+    查看系统网络信息
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    网络配置
+    配置网络
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#systemd-networkd" class="md-nav__link">
-    systemd-networkd
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ifupdown" class="md-nav__link">
-    ifupdown
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#netplan" class="md-nav__link">
-    netplan
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    配置 DNS
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#systemd-resolved" class="md-nav__link">
-    systemd-resolved
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etcresolvconf" class="md-nav__link">
-    锁定 /etc/resolv.conf
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -631,10 +584,46 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      软件包管理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        软件包管理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../installing-software/apt/" title="使用 apt 安装软件" class="md-nav__link">
+    <a href="../../package-management/apt/" title="使用 apt 安装软件" class="md-nav__link">
       使用 apt 安装软件
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../package-management/dpkg/" title="dpkg" class="md-nav__link">
+      dpkg
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -839,70 +828,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    语法介绍
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    选择网络配置工具
+    查看系统网络信息
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    网络配置
+    配置网络
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#systemd-networkd" class="md-nav__link">
-    systemd-networkd
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ifupdown" class="md-nav__link">
-    ifupdown
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#netplan" class="md-nav__link">
-    netplan
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#dns" class="md-nav__link">
-    配置 DNS
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#systemd-resolved" class="md-nav__link">
-    systemd-resolved
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#etcresolvconf" class="md-nav__link">
-    锁定 /etc/resolv.conf
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -923,188 +865,122 @@
               
                 
                 
-                <h1 id="_1">网络配置</h1>
-<h2 id="_2">选择网络配置工具</h2>
-<p>尽管 iproute2 功能强大，但这种底层网络工具配置起来有些麻烦。通常情况下我们会选择容易操作的高级配置工具，目前流行的有以下几款：</p>
+                <h1 id="iproute2">网络工具 iproute2</h1>
+<p>net-tools 是一款知名的老牌网络工具。Linux kernel 2.2 开始对网络子系统进行了重新设计，老牌的网络工具难以继续与之适配。iproute2 是基于新的网络子系统开发出来的工具，可以管理路由、网络接口、隧道、流量控制以及与网络相关的设备驱动程序。</p>
+<p>下面是 iproute2 和 net-tools 相关命令的对照：</p>
 <table>
 <thead>
 <tr>
-<th>配置工具</th>
-<th>简介</th>
+<th>iproute2 命令</th>
+<th>net-tools 命令</th>
+<th>用途</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>systemd-networkd</td>
-<td>systemd 是许多发行版默认的 init 程序，其中 systemd-networkd 组件可用于网络配置管理，配置文件在 <code>/etc/systemd/network/</code>。</td>
+<td><code>ip address</code>, <code>ip link</code></td>
+<td><code>ifconfig</code></td>
+<td>管理网络接口和地址</td>
 </tr>
 <tr>
-<td>ifupdown</td>
-<td>Debian 标准的网络配置工具，配置文件在 <code>/etc/network/interfaces</code>。</td>
+<td><code>ip route</code></td>
+<td><code>route</code></td>
+<td>管理路由表</td>
 </tr>
 <tr>
-<td>NetworkManager</td>
-<td>一款容易上手的网络配置工具，使用 <code>nmcli</code> 和 <code>nmtui</code> 进行配置，并支持图形界面，很多桌面版 Linux 使用此工具。</td>
+<td><code>arp</code></td>
+<td><code>ip neigh</code></td>
+<td>管理 arp 表</td>
 </tr>
 <tr>
-<td>netplan</td>
-<td>通过 YAML 文件管理网络配置，支持 systemd-networkd 和 NetworkManager 作为后端程序，配置文件在 <code>/etc/netplan/*.yaml</code>。(Ubuntu Server 18.04 默认使用此工具)</td>
+<td><code>ss</code></td>
+<td><code>netstat</code></td>
+<td>查看网络连接信息</td>
 </tr>
 </tbody>
 </table>
-<p>桌面环境建议使用 NetworkManager；在服务器上建议使用默认的配置工具，或者切换到 systemd-networkd。</p>
-<h2 id="_3">网络配置</h2>
-<p>首先敲 <code>ip address</code> 查看一下网卡信息。</p>
-<p>进行网络配置之前先看看操作系统有哪些程序已经在工作了，避免造成冲突。比如查看一下相关的配置文件：</p>
-<div class="codehilite"><pre><span></span><span class="err">wc -l /etc/systemd/network/*.network /etc/network/interfaces /etc/netplan/*.yaml</span>
-<span class="err">grep -v &#39;^#&#39; /etc/systemd/network/*.network /etc/network/interfaces /etc/netplan/*.yaml</span>
+<h2 id="_1">语法介绍</h2>
+<p><code>ip</code> 命令的语法如下：</p>
+<div class="codehilite"><pre><span></span><span class="n">ip</span> <span class="p">[</span> <span class="k">OPTIONS</span> <span class="p">]</span> <span class="k">OBJECT</span> <span class="err">{</span> <span class="n">COMMAND</span> <span class="o">|</span> <span class="n">help</span> <span class="err">}</span>
+
+<span class="k">OBJECT</span> <span class="p">:</span><span class="o">=</span> <span class="err">{</span> <span class="n">link</span> <span class="o">|</span> <span class="n">address</span> <span class="o">|</span> <span class="n">addrlabel</span> <span class="o">|</span> <span class="n">route</span> <span class="o">|</span> <span class="k">rule</span> <span class="o">|</span> <span class="n">neigh</span> <span class="o">|</span> <span class="n">ntable</span> <span class="o">|</span> <span class="n">tunnel</span> <span class="o">|</span> <span class="n">tuntap</span> <span class="o">|</span> <span class="n">maddress</span> <span class="o">|</span> <span class="n">mroute</span> <span class="o">|</span> <span class="n">mrule</span> <span class="o">|</span> <span class="n">monitor</span> <span class="o">|</span> <span class="n">xfrm</span> <span class="o">|</span> <span class="n">netns</span> <span class="o">|</span> <span class="n">l2tp</span> <span class="o">|</span> <span class="n">tcp_metrics</span> <span class="o">|</span> <span class="n">token</span> <span class="o">|</span> <span class="n">macsec</span> <span class="err">}</span>
 </pre></div>
 
 
-<p>选用一款配置工具即可，将不需要的配置文件处理掉。</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>通过网络连接到计算机时，进行网络配置要非常小心，操作不当将会很尴尬。</p>
-</div>
-<h3 id="systemd-networkd">systemd-networkd</h3>
-<p>在 <code>/etc/systemd/network</code> 目录下创建 <code>.network</code> 文件，例如 <code>/etc/systemd/network/50-eht0.network</code>。下面是 eth0 网卡使用 DHCP 的配置：</p>
-<div class="codehilite"><pre><span></span><span class="k">[Match]</span>
-<span class="na">Name</span><span class="o">=</span><span class="s">eth0</span>
+<p><code>ip</code> 命令可以管理很多对象，上面已经列出来了。众多对象及其子命令要全部记住可不容易，所以 help 命令很有用，所有对象均支持 help 命令，例如 <code>ip help</code>、<code>ip link help</code>。</p>
+<p>命令中的字段可以不敲完整，例如 <code>ip address</code> 可以敲成 <code>ip addr</code>、<code>ip a</code>；而 <code>ip addrlabel</code> 至少要敲出 <code>ip addrl</code>，因为命令识别有优先级顺序。直接敲 <code>ip address</code> 后面什么都没有，会被程序识别为 <code>ip address show</code>。</p>
+<h2 id="_2">查看系统网络信息</h2>
+<p>查看「IP地址」、路由表和「ARP表」是最常规的需求，命令如下：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 查看「IP地址」</span>
+ip address
 
-<span class="k">[Network]</span>
-<span class="na">DHCP</span><span class="o">=</span><span class="s">ipv4</span>
+<span class="c1"># 查看路由表</span>
+ip route
+
+<span class="c1"># 查看「ARP表」</span>
+ip neigh
 </pre></div>
 
 
-<p>使用「静态 IP 地址」的配置：</p>
-<div class="codehilite"><pre><span></span><span class="k">[Match]</span>
-<span class="na">Name</span><span class="o">=</span><span class="s">eth0</span>
-
-<span class="k">[Network]</span>
-<span class="na">Address</span><span class="o">=</span><span class="s">192.168.0.15/24</span>
-<span class="na">Gateway</span><span class="o">=</span><span class="s">192.168.0.1</span>
-<span class="na">DNS</span><span class="o">=</span><span class="s">119.29.29.29</span>
-<span class="na">DNS</span><span class="o">=</span><span class="s">223.5.5.5</span>
+<p>执行后输出信息如下：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  ip address
+<span class="go">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span>
+<span class="go">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span>
+<span class="go">    inet 127.0.0.1/8 scope host lo</span>
+<span class="go">       valid_lft forever preferred_lft forever</span>
+<span class="go">2: eth0: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000</span>
+<span class="go">    link/ether 52:54:00:b6:13:16 brd ff:ff:ff:ff:ff:ff</span>
+<span class="go">    inet 192.168.121.142/24 brd 192.168.121.255 scope global dynamic eth0</span>
+<span class="go">       valid_lft 2285sec preferred_lft 2285sec</span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  ip route
+<span class="go">default via 192.168.121.1 dev eth0 </span>
+<span class="go">192.168.121.0/24 dev eth0 proto kernel scope link src 192.168.121.142 </span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  ip neigh
+<span class="go">192.168.121.1 dev eth0 lladdr 52:54:00:cd:70:3a REACHABLE</span>
 </pre></div>
 
 
-<p>然后启动 systemd-networkd 服务使配置生效，并设置为开机启动：</p>
-<div class="codehilite"><pre><span></span>sudo systemctl restart systemd-networkd
-sudo systemctl <span class="nb">enable</span> systemd-networkd
+<h2 id="_3">配置网络</h2>
+<p>这里我们通过一个小实验简单了解一下 iproute2 如何配置网络：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  sudo ip link add test-br <span class="nb">type</span> bridge
+<span class="gp">$</span>  sudo ip address change <span class="m">10</span>.9.2.1/24 dev test-br
+<span class="gp">$</span>  sudo ip link <span class="nb">set</span> test-br up
+<span class="gp">$</span>  ip address show test-br 
+<span class="go">96: test-br: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc noqueue state UNKNOWN group default qlen 1000</span>
+<span class="go">    link/ether 8a:8f:ab:0b:12:23 brd ff:ff:ff:ff:ff:ff</span>
+<span class="go">    inet 10.9.2.1/24 scope global test-br</span>
+<span class="go">       valid_lft forever preferred_lft forever</span>
+<span class="gp">$</span>  ping -c <span class="m">1</span> <span class="m">10</span>.9.2.1
+<span class="go">PING 10.9.2.1 (10.9.2.1) 56(84) bytes of data.</span>
+<span class="go">64 bytes from 10.9.2.1: icmp_seq=1 ttl=64 time=0.066 ms</span>
+
+<span class="go">--- 10.9.2.1 ping statistics ---</span>
+<span class="go">1 packets transmitted, 1 received, 0% packet loss, time 0ms</span>
+<span class="go">rtt min/avg/max/mdev = 0.066/0.066/0.066/0.000 ms</span>
+<span class="gp">$</span>  
+<span class="gp">$</span>  sudo ip link del test-br
 </pre></div>
 
 
-<h3 id="ifupdown">ifupdown</h3>
-<p>编辑 <code>/etc/network/interfaces</code>，下面是 eth0 网卡使用 DHCP 的配置：</p>
-<div class="codehilite"><pre><span></span><span class="err">auto eth0</span>
-<span class="err">allow-hotplug eth0</span>
-<span class="err">iface eth0 inet dhcp</span>
+<p>我们把相关的命令单独列出来：</p>
+<div class="codehilite"><pre><span></span><span class="c1"># 创建网卡</span>
+sudo ip link add test-br <span class="nb">type</span> bridge
+
+<span class="c1"># 配置「IP地址」</span>
+sudo ip address change <span class="m">10</span>.9.2.1/24 dev test-br
+
+<span class="c1"># 启动网卡并查看网卡信息</span>
+sudo ip link <span class="nb">set</span> test-br up
+ip address show test-br 
+
+<span class="c1"># 删除网卡</span>
+sudo ip link del test-br
 </pre></div>
 
 
-<p>使用「静态 IP 地址」的配置：</p>
-<div class="codehilite"><pre><span></span><span class="err">auto eth0</span>
-<span class="err">iface eth0 inet static</span>
-<span class="err">  address 192.168.0.15/24</span>
-<span class="err">  gateway 192.168.0.1</span>
-<span class="err">  dns-nameservers 119.29.29.29 223.5.5.5</span>
-</pre></div>
-
-
-<p>配置文件变更以后，输入下面的命令使配置生效：</p>
-<div class="codehilite"><pre><span></span>sudo ifdown eth0<span class="p">;</span> sudo ifup eth0
-</pre></div>
-
-
-<h3 id="netplan">netplan</h3>
-<p>编辑 <code>/etc/netplan/config.yaml</code>，下面是 eth0 网卡使用 DHCP 的配置：</p>
-<div class="codehilite"><pre><span></span><span class="n">network</span><span class="o">:</span>
-  <span class="n">version</span><span class="o">:</span> <span class="mi">2</span>
-  <span class="n">renderer</span><span class="o">:</span> <span class="n">networkd</span>
-  <span class="n">ethernets</span><span class="o">:</span>
-    <span class="n">eth0</span><span class="o">:</span>
-      <span class="n">dhcp4</span><span class="o">:</span> <span class="kc">true</span>
-</pre></div>
-
-
-<p>使用「静态 IP 地址」的配置：</p>
-<div class="codehilite"><pre><span></span><span class="n">network</span><span class="o">:</span>
-  <span class="n">version</span><span class="o">:</span> <span class="mi">2</span>
-  <span class="n">renderer</span><span class="o">:</span> <span class="n">networkd</span>
-  <span class="n">ethernets</span><span class="o">:</span>
-    <span class="n">eth0</span><span class="o">:</span>
-      <span class="n">addresses</span><span class="o">:</span>
-        <span class="o">-</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.15</span><span class="o">/</span><span class="mi">24</span>
-      <span class="n">gateway4</span><span class="o">:</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.1</span>
-      <span class="n">nameservers</span><span class="o">:</span>
-          <span class="n">addresses</span><span class="o">:</span> <span class="o">[</span><span class="mf">119.29</span><span class="o">.</span><span class="mf">29.29</span><span class="o">,</span> <span class="mf">223.5</span><span class="o">.</span><span class="mf">5.5</span><span class="o">]</span>
-</pre></div>
-
-
-<p>配置文件变更以后，输入下面的命令使配置生效：</p>
-<div class="codehilite"><pre><span></span>sudo netplan apply
-</pre></div>
-
-
-<h2 id="dns">配置 DNS</h2>
-<p>按照上面的网络配置，通过 DHCP 获取或者静态配置的方式设定了 DNS，相应的后端程序读取配置后，将「DNS服务器」写入 <code>/etc/resolv.conf</code>，此时操作系统可进行域名解析了。</p>
-<p>DHCP 是动态的，或者用户需要在不同的网络之间切换，这些因素导致 <code>/etc/resolv.conf</code> 需要动态调整。如果看到该文件像下面这样，以软链接的形式存在，则说明 DNS 可能由某款程序管理，用户不应该直接修改该文件。</p>
-<div class="codehilite"><pre><span></span>$  ls -l /etc/resolv.conf 
-lrwxrwxrwx <span class="m">1</span> root root <span class="m">37</span> Feb <span class="m">29</span> <span class="m">12</span>:20 /etc/resolv.conf -&gt; /run/systemd/resolve/stub-resolv.conf
-</pre></div>
-
-
-<p>上面 <code>/run/systemd/resolve/</code> 这个目录由 systemd-resolved 管理。</p>
-<h3 id="systemd-resolved">systemd-resolved</h3>
-<p>systemd-resolved 是 systemd 的一个组件，不需要单独安装，直接将服务启用即可，然后将 <code>/etc/resolv.conf</code> 作为软链接指向 <code>/run/systemd/resolve/stub-resolv.conf</code>，操作如下：</p>
-<div class="codehilite"><pre><span></span>sudo systemctl <span class="nb">enable</span> systemd-resolved
-sudo systemctl restart systemd-resolved
-sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
-</pre></div>
-
-
-<p><code>/run/systemd/resolve/stub-resolv.conf</code> 内容如下：</p>
-<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">This</span> <span class="n">file</span> <span class="k">is</span> <span class="n">managed</span> <span class="k">by</span> <span class="n">man</span><span class="p">:</span><span class="n">systemd</span><span class="o">-</span><span class="n">resolved</span><span class="p">(</span><span class="mi">8</span><span class="p">).</span> <span class="k">Do</span> <span class="k">not</span> <span class="n">edit</span><span class="p">.</span>
-<span class="o">#</span> <span class="err">…</span>
-
-<span class="n">nameserver</span> <span class="mi">127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">53</span>
-<span class="k">options</span> <span class="n">edns0</span>
-</pre></div>
-
-
-<p>上面可以看到 <code>nameserver</code> 是 <code>127.0.0.53</code>，因为 systemd-resolved 包含一个「DNS服务」，它监听 <code>127.0.0.53</code>。此时操作系统的域名解析请求全部发到这个服务，再由它进行后续的解析。<code>resolvctl status</code> (老版本使用 <code>systemd-resolve --status</code>) 可以查看服务状态，输出信息如下：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span> resolvectl status <span class="o">||</span> systemd-resolve --status
-<span class="go">Global</span>
-<span class="go">       LLMNR setting: yes</span>
-<span class="go">MulticastDNS setting: yes</span>
-<span class="go">  DNSOverTLS setting: no</span>
-<span class="go">      DNSSEC setting: allow-downgrade</span>
-<span class="go">    DNSSEC supported: yes</span>
-<span class="go">  Current DNS Server: 119.29.29.29</span>
-<span class="go">         DNS Servers: 119.29.29.29</span>
-<span class="go">                      223.5.5.5</span>
-<span class="go">…</span>
-</pre></div>
-
-
-<p>上面可以看到，systemd-resolved 后端使用 <code>119.29.29.29</code> 作为「DNS服务器」，通过 <code>/etc/systemd/resolved.conf</code> 这个文件进行管理，配置如下：</p>
-<div class="codehilite"><pre><span></span><span class="k">[Resolve]</span>
-<span class="na">DNS</span><span class="o">=</span><span class="s">119.29.29.29 223.5.5.5</span>
-<span class="na">DNSSEC</span><span class="o">=</span><span class="s">false</span>
-</pre></div>
-
-
-<p>默认情况下 <code>DNS=</code> 为空，这时会使用网卡的 DNS，即动态管理，也可以像上面那样配置为静态的。修改了配置后需要重启服务才能生效 <code>sudo systemctl restart systemd-resolved</code>。</p>
-<h3 id="etcresolvconf">锁定 /etc/resolv.conf</h3>
-<p>如果长期使用固定的 DNS，也可以直接配置 <code>/etc/resolv.conf</code>，然后将其锁定，以确保它不被其他程序修改掉。像下面这样操作:</p>
-<div class="codehilite"><pre><span></span>sudo rm -f /etc/resolv.conf
-<span class="nb">echo</span> <span class="s2">&quot;nameserver 119.29.29.29&quot;</span> <span class="p">|</span> sudo tee /etc/resolv.conf
-<span class="nb">echo</span> <span class="s2">&quot;nameserver 223.5.5.5&quot;</span> <span class="p">|</span> sudo tee -a /etc/resolv.conf
-sudo chattr +i /etc/resolv.conf
-</pre></div>
-
-
-<p><code>chattr +i</code> 可锁定文件，此时文件不可修改，<code>lsattr /etc/resolv.conf</code> 可以看到文件有个 <code>i</code> 属性，<code>chattr -i /etc/resolv.conf</code> 可解除锁定。</p>
+<p>上面对网卡进行增删改的操作都需要 root 权限，并且这些配置在重启后会失效。</p>
                 
                   
                 
@@ -1126,7 +1002,7 @@ sudo chattr +i /etc/resolv.conf
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../iproute2/" title="网络工具 iproute2" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../configuration/" title="配置网络" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1135,13 +1011,13 @@ sudo chattr +i /etc/resolv.conf
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                网络工具 iproute2
+                配置网络
               </span>
             </div>
           </a>
         
         
-          <a href="../../installing-software/apt/" title="使用 apt 安装软件" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../package-management/apt/" title="使用 apt 安装软件" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">

@@ -13,7 +13,7 @@
         <meta name="description" content="Linux 入门书籍，适用于「Debian/Ubuntu 相关发行版」">
       
       
-        <link rel="canonical" href="https://itboon.github.io/linux-20/installing-software/apt/">
+        <link rel="canonical" href="https://itboon.github.io/linux-20/network/configuration/">
       
       
       
@@ -40,7 +40,7 @@
     
     
       
-        <title>使用 apt 安装软件 - Debian/Ubuntu Book《Linux 二零》</title>
+        <title>配置网络 - Debian/Ubuntu Book《Linux 二零》</title>
       
     
     
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#apt" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -132,7 +132,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                使用 apt 安装软件
+                配置网络
               
             </span>
           
@@ -481,10 +481,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       管理网络
@@ -500,35 +502,6 @@
           
           
 
-
-  <li class="md-nav__item">
-    <a href="../../networking/iproute2/" title="网络工具 iproute2" class="md-nav__link">
-      网络工具 iproute2
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../networking/configuration/" title="网络配置" class="md-nav__link">
-      网络配置
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
   
 
 
@@ -540,11 +513,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        使用 apt 安装软件
+        配置网络
       </label>
     
-    <a href="./" title="使用 apt 安装软件" class="md-nav__link md-nav__link--active">
-      使用 apt 安装软件
+    <a href="./" title="配置网络" class="md-nav__link md-nav__link--active">
+      配置网络
     </a>
     
       
@@ -558,30 +531,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    常用命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    示例
+    选择网络配置工具
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#busybox" class="md-nav__link">
-    安装 busybox 然后卸载
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    升级软件包/更新系统
+  <a href="#iproute2" class="md-nav__link">
+    iproute2
   </a>
   
 </li>
@@ -592,31 +551,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#apt_1" class="md-nav__link">
-    配置 apt 源
+  <a href="#_3" class="md-nav__link">
+    准备工作
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    配置国内镜像源
+    配置网络
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#debian-10" class="md-nav__link">
-    Debian 10
+  <a href="#systemd-networkd" class="md-nav__link">
+    systemd-networkd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ubuntu-1804" class="md-nav__link">
-    Ubuntu 18.04
+  <a href="#ifupdown" class="md-nav__link">
+    ifupdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netplan" class="md-nav__link">
+    netplan
   </a>
   
 </li>
@@ -625,10 +590,25 @@
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    配置 DNS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vscode" class="md-nav__link">
-    添加 vscode 源并安装
+  <a href="#systemd-resolved" class="md-nav__link">
+    systemd-resolved
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcresolvconf" class="md-nav__link">
+    锁定 /etc/resolv.conf
   </a>
   
 </li>
@@ -646,6 +626,71 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../iproute2/" title="iproute2" class="md-nav__link">
+      iproute2
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      软件包管理
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        软件包管理
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../package-management/apt/" title="使用 apt 安装软件" class="md-nav__link">
+      使用 apt 安装软件
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../package-management/dpkg/" title="dpkg" class="md-nav__link">
+      dpkg
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -850,30 +895,16 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    常用命令
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    示例
+    选择网络配置工具
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#busybox" class="md-nav__link">
-    安装 busybox 然后卸载
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    升级软件包/更新系统
+  <a href="#iproute2" class="md-nav__link">
+    iproute2
   </a>
   
 </li>
@@ -884,31 +915,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#apt_1" class="md-nav__link">
-    配置 apt 源
+  <a href="#_3" class="md-nav__link">
+    准备工作
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
-    配置国内镜像源
+    配置网络
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#debian-10" class="md-nav__link">
-    Debian 10
+  <a href="#systemd-networkd" class="md-nav__link">
+    systemd-networkd
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#ubuntu-1804" class="md-nav__link">
-    Ubuntu 18.04
+  <a href="#ifupdown" class="md-nav__link">
+    ifupdown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netplan" class="md-nav__link">
+    netplan
   </a>
   
 </li>
@@ -917,10 +954,25 @@
     </nav>
   
 </li>
+      
+        <li class="md-nav__item">
+  <a href="#dns" class="md-nav__link">
+    配置 DNS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#vscode" class="md-nav__link">
-    添加 vscode 源并安装
+  <a href="#systemd-resolved" class="md-nav__link">
+    systemd-resolved
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etcresolvconf" class="md-nav__link">
+    锁定 /etc/resolv.conf
   </a>
   
 </li>
@@ -947,95 +999,191 @@
               
                 
                 
-                <h1 id="apt">使用 apt</h1>
-<p>"Advanced Package Tool" (APT) 是「Debian/Ubuntu 相关发行版」的「软件包管理器」。APT 通过自动化从预编译文件或通过编译源代码进行软件包的检索、配置和安装，使得管理操作系统上的软件变得简单。</p>
-<h2 id="_1">常用命令</h2>
-<ul>
-<li><code>update</code> - 更新可用软件包列表。</li>
-<li><code>upgrade</code> - 升级已安装的软件包，现有软件包不会被删除。</li>
-<li><code>full-upgrade</code> - 执行 <code>upgrade</code> 进行升级。此命令进行完整的升级，必要情况下会删除已安装的软件包。</li>
-<li><code>list</code> - 根据名称列出软件包。</li>
-<li><code>search</code> - 搜索软件包描述。</li>
-<li><code>show</code> - 显示软件包细节。</li>
-<li><code>install</code> - 安装软件包。</li>
-<li><code>remove</code> - 移除软件包。</li>
-<li><code>autoremove</code> - 卸载所有自动安装且不再使用的软件包。</li>
-</ul>
-<h2 id="_2">示例</h2>
-<h3 id="busybox">安装 busybox 然后卸载</h3>
-<div class="codehilite"><pre><span></span>sudo apt update
-sudo apt install busybox
-sudo apt remove busybox
+                <h1 id="_1">配置网络</h1>
+<h2 id="_2">选择网络配置工具</h2>
+<p>配置「Linux 操作系统」的网络有以下几款主流的配置工具可供选择：</p>
+<table>
+<thead>
+<tr>
+<th>配置工具</th>
+<th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>systemd-networkd</td>
+<td>systemd 是许多发行版默认的 init 程序，其中 systemd-networkd 组件可用于网络配置管理，配置文件在 <code>/etc/systemd/network/</code>。</td>
+</tr>
+<tr>
+<td>ifupdown</td>
+<td>Debian 标准的网络配置工具，配置文件在 <code>/etc/network/interfaces</code>。</td>
+</tr>
+<tr>
+<td>NetworkManager</td>
+<td>一款容易上手的网络配置工具，使用 <code>nmcli</code> 和 <code>nmtui</code> 进行配置，并支持图形界面，很多桌面版 Linux 使用此工具。</td>
+</tr>
+<tr>
+<td>netplan</td>
+<td>通过 YAML 文件管理网络配置，支持 systemd-networkd 和 NetworkManager 作为后端程序，配置文件在 <code>/etc/netplan/*.yaml</code>。(Ubuntu Server 18.04 默认使用此工具)</td>
+</tr>
+</tbody>
+</table>
+<p>桌面环境建议使用 NetworkManager；在服务器上建议使用默认的配置工具，或者切换到 systemd-networkd。</p>
+<h3 id="iproute2">iproute2</h3>
+<p>iproute2 是「Linux 操作系统」上强大的网络工具，例如 <code>ip address</code>、<code>ip route</code> 命令可用于查看主机网络信息。但是这种底层网络工具配置起来有些麻烦，我们会在下一节介绍它。</p>
+<h2 id="_3">准备工作</h2>
+<p>首先敲 <code>ip address</code> 查看一下网卡信息。</p>
+<p>进行网络配置之前先看看操作系统有哪些程序已经在工作了，避免造成冲突。比如查看一下相关的配置文件：</p>
+<div class="codehilite"><pre><span></span><span class="err">wc -l /etc/systemd/network/*.network /etc/network/interfaces /etc/netplan/*.yaml</span>
+<span class="err">grep -v &#39;^#&#39; /etc/systemd/network/*.network /etc/network/interfaces /etc/netplan/*.yaml</span>
 </pre></div>
 
 
-<h3 id="_3">升级软件包/更新系统</h3>
-<div class="codehilite"><pre><span></span>sudo apt update
-sudo apt upgrade
-</pre></div>
-
-
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>升级操作系统大版本通常需要删除一些遗弃的软件包，因此需要使用 <code>full-upgrade</code>，例如从 Debian 9 升级到 Debian 10。</p>
+<p>选用一款配置工具即可，将不需要的配置文件处理掉。</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>通过网络连接到计算机时，进行网络配置要非常小心，操作不当将会很尴尬。</p>
 </div>
-<h2 id="apt_1">配置 apt 源</h2>
-<p>apt 从一个或多个软件存储库（源）下载软件包并将其安装到您的计算机上。仓库通常是网络服务器，例如官方的DebianStable仓库。用户也可以配置国内的软件源（腾讯软件源，阿里云开源镜像站，清华大学开源软件镜像站），或者使用私有的服务器。</p>
-<h3 id="_4">配置国内镜像源</h3>
-<p>这里以 Debian 10 和 Ubuntu 18.04 为例，其他版本请参考相应的文档：<a href="https://mirrors.cloud.tencent.com/">https://mirrors.cloud.tencent.com/</a></p>
-<h4 id="debian-10">Debian 10</h4>
-<div class="codehilite"><pre><span></span>sudo tee /etc/apt/sources.list <span class="s">&lt;&lt;EOF</span>
-<span class="s">deb https://mirrors.aliyun.com/debian buster main</span>
-<span class="s">deb-src https://mirrors.aliyun.com/debian buster main</span>
-<span class="s">deb https://mirrors.aliyun.com/debian-security/ buster/updates main</span>
-<span class="s">deb-src https://mirrors.aliyun.com/debian-security/ buster/updates main</span>
-<span class="s">deb https://mirrors.aliyun.com/debian buster-updates main</span>
-<span class="s">deb-src https://mirrors.aliyun.com/debian buster-updates main</span>
-<span class="s">EOF</span>
-sudo apt update
+<h2 id="_4">配置网络</h2>
+<h3 id="systemd-networkd">systemd-networkd</h3>
+<p>在 <code>/etc/systemd/network</code> 目录下创建 <code>.network</code> 文件，例如 <code>/etc/systemd/network/50-eht0.network</code>。下面是 eth0 网卡使用 DHCP 的配置：</p>
+<div class="codehilite"><pre><span></span><span class="k">[Match]</span>
+<span class="na">Name</span><span class="o">=</span><span class="s">eth0</span>
+
+<span class="k">[Network]</span>
+<span class="na">DHCP</span><span class="o">=</span><span class="s">ipv4</span>
 </pre></div>
 
 
-<p>上面的操作可以稍微改进一下，将主机地址和系统版本替换为变量，如下：</p>
-<div class="codehilite"><pre><span></span><span class="nv">aptHost</span><span class="o">=</span><span class="s2">&quot;mirrors.cloud.tencent.com&quot;</span>
-<span class="nv">release</span><span class="o">=</span><span class="s2">&quot;buster&quot;</span>
-sudo tee /etc/apt/sources.list <span class="s">&lt;&lt;EOF</span>
-<span class="s">deb http://${aptHost}/debian ${release} main</span>
-<span class="s">deb-src http://${aptHost}/debian ${release} main</span>
-<span class="s">deb http://${aptHost}/debian-security ${release}/updates main</span>
-<span class="s">deb-src http://${aptHost}/debian-security ${release}/updates main</span>
-<span class="s">deb http://${aptHost}/debian ${release}-updates main</span>
-<span class="s">deb-src http://${aptHost}/debian ${release}-updates main</span>
-<span class="s">EOF</span>
-sudo apt update
+<p>使用「静态 IP 地址」的配置：</p>
+<div class="codehilite"><pre><span></span><span class="k">[Match]</span>
+<span class="na">Name</span><span class="o">=</span><span class="s">eth0</span>
+
+<span class="k">[Network]</span>
+<span class="na">Address</span><span class="o">=</span><span class="s">192.168.0.15/24</span>
+<span class="na">Gateway</span><span class="o">=</span><span class="s">192.168.0.1</span>
+<span class="na">DNS</span><span class="o">=</span><span class="s">119.29.29.29</span>
+<span class="na">DNS</span><span class="o">=</span><span class="s">223.5.5.5</span>
 </pre></div>
 
 
-<h4 id="ubuntu-1804">Ubuntu 18.04</h4>
-<p>可以直接从网站下载配置文件，然后放到系统目录，操作如下：</p>
-<div class="codehilite"><pre><span></span><span class="err">curl -o sources.list http://mirrors.cloud.tencent.com/repo/ubuntu18_sources.list</span>
-<span class="err">sudo mv sources.list /etc/apt/</span>
-<span class="err">sudo apt update</span>
+<p>然后启动 systemd-networkd 服务使配置生效，并设置为开机启动：</p>
+<div class="codehilite"><pre><span></span>sudo systemctl restart systemd-networkd
+sudo systemctl <span class="nb">enable</span> systemd-networkd
 </pre></div>
 
 
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p><code>apt update</code> 根据 sources.list 更新可用软件包列表，修改配置文件后执行 <code>update</code> 才能正式生效。用户可以每次安装或升级软件时都执行一次 update，也可以仅在重要的操作前执行。本书其他地方可能会忽略这一步。</p>
-</div>
-<h3 id="vscode">添加 vscode 源并安装</h3>
-<div class="codehilite"><pre><span></span>curl https://packages.microsoft.com/keys/microsoft.asc <span class="p">|</span> gpg --dearmor &gt; packages.microsoft.gpg
-sudo install -o root -g root -m <span class="m">644</span> packages.microsoft.gpg /usr/share/keyrings/
-
-<span class="c1"># 写入软件源</span>
-sudo sh -c <span class="s1">&#39;echo &quot;deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main&quot; &gt; /etc/apt/sources.list.d/vscode.list&#39;</span>
-
-sudo apt update
-sudo apt install code
+<h3 id="ifupdown">ifupdown</h3>
+<p>编辑 <code>/etc/network/interfaces</code>，下面是 eth0 网卡使用 DHCP 的配置：</p>
+<div class="codehilite"><pre><span></span><span class="err">auto eth0</span>
+<span class="err">allow-hotplug eth0</span>
+<span class="err">iface eth0 inet dhcp</span>
 </pre></div>
 
 
-<p>第三方软件源可以写入 <code>/etc/apt/sources.list</code> 文件，但更好的安排是在 <code>/etc/apt/sources.list.d</code> 目录下创建一个 list 文件，当不需要时可以删除相应的文件而避免频繁修改一个主配置文件。当 <code>/etc/apt/sources.list.d/vscode.list</code> 这个文件被删除后，vscode 仍然可以正常使用，但无法被 <code>apt upgrade</code> 升级。</p>
+<p>使用「静态 IP 地址」的配置：</p>
+<div class="codehilite"><pre><span></span><span class="err">auto eth0</span>
+<span class="err">iface eth0 inet static</span>
+<span class="err">  address 192.168.0.15/24</span>
+<span class="err">  gateway 192.168.0.1</span>
+<span class="err">  dns-nameservers 119.29.29.29 223.5.5.5</span>
+</pre></div>
+
+
+<p>配置文件变更以后，输入下面的命令使配置生效：</p>
+<div class="codehilite"><pre><span></span>sudo ifdown eth0<span class="p">;</span> sudo ifup eth0
+</pre></div>
+
+
+<h3 id="netplan">netplan</h3>
+<p>编辑 <code>/etc/netplan/config.yaml</code>，下面是 eth0 网卡使用 DHCP 的配置：</p>
+<div class="codehilite"><pre><span></span><span class="n">network</span><span class="o">:</span>
+  <span class="n">version</span><span class="o">:</span> <span class="mi">2</span>
+  <span class="n">renderer</span><span class="o">:</span> <span class="n">networkd</span>
+  <span class="n">ethernets</span><span class="o">:</span>
+    <span class="n">eth0</span><span class="o">:</span>
+      <span class="n">dhcp4</span><span class="o">:</span> <span class="kc">true</span>
+</pre></div>
+
+
+<p>使用「静态 IP 地址」的配置：</p>
+<div class="codehilite"><pre><span></span><span class="n">network</span><span class="o">:</span>
+  <span class="n">version</span><span class="o">:</span> <span class="mi">2</span>
+  <span class="n">renderer</span><span class="o">:</span> <span class="n">networkd</span>
+  <span class="n">ethernets</span><span class="o">:</span>
+    <span class="n">eth0</span><span class="o">:</span>
+      <span class="n">addresses</span><span class="o">:</span>
+        <span class="o">-</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.15</span><span class="o">/</span><span class="mi">24</span>
+      <span class="n">gateway4</span><span class="o">:</span> <span class="mf">192.168</span><span class="o">.</span><span class="mf">0.1</span>
+      <span class="n">nameservers</span><span class="o">:</span>
+          <span class="n">addresses</span><span class="o">:</span> <span class="o">[</span><span class="mf">119.29</span><span class="o">.</span><span class="mf">29.29</span><span class="o">,</span> <span class="mf">223.5</span><span class="o">.</span><span class="mf">5.5</span><span class="o">]</span>
+</pre></div>
+
+
+<p>配置文件变更以后，输入下面的命令使配置生效：</p>
+<div class="codehilite"><pre><span></span>sudo netplan apply
+</pre></div>
+
+
+<h2 id="dns">配置 DNS</h2>
+<p>按照上面的网络配置，通过 DHCP 获取或者静态配置的方式设定了 DNS，相应的后端程序读取配置后，将「DNS服务器」写入 <code>/etc/resolv.conf</code>，此时操作系统可进行域名解析了。</p>
+<p>DHCP 是动态的，或者用户需要在不同的网络之间切换，这些因素导致 <code>/etc/resolv.conf</code> 需要动态调整。如果看到该文件像下面这样，以软链接的形式存在，则说明 DNS 可能由某款程序管理，用户不应该直接修改该文件。</p>
+<div class="codehilite"><pre><span></span>$  ls -l /etc/resolv.conf 
+lrwxrwxrwx <span class="m">1</span> root root <span class="m">37</span> Feb <span class="m">29</span> <span class="m">12</span>:20 /etc/resolv.conf -&gt; /run/systemd/resolve/stub-resolv.conf
+</pre></div>
+
+
+<p>上面 <code>/run/systemd/resolve/</code> 这个目录由 systemd-resolved 管理。</p>
+<h3 id="systemd-resolved">systemd-resolved</h3>
+<p>systemd-resolved 是 systemd 的一个组件，不需要单独安装，直接将服务启用即可，然后将 <code>/etc/resolv.conf</code> 作为软链接指向 <code>/run/systemd/resolve/stub-resolv.conf</code>，操作如下：</p>
+<div class="codehilite"><pre><span></span>sudo systemctl <span class="nb">enable</span> systemd-resolved
+sudo systemctl restart systemd-resolved
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+</pre></div>
+
+
+<p><code>/run/systemd/resolve/stub-resolv.conf</code> 内容如下：</p>
+<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">This</span> <span class="n">file</span> <span class="k">is</span> <span class="n">managed</span> <span class="k">by</span> <span class="n">man</span><span class="p">:</span><span class="n">systemd</span><span class="o">-</span><span class="n">resolved</span><span class="p">(</span><span class="mi">8</span><span class="p">).</span> <span class="k">Do</span> <span class="k">not</span> <span class="n">edit</span><span class="p">.</span>
+<span class="o">#</span> <span class="err">…</span>
+
+<span class="n">nameserver</span> <span class="mi">127</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">53</span>
+<span class="k">options</span> <span class="n">edns0</span>
+</pre></div>
+
+
+<p>上面可以看到 <code>nameserver</code> 是 <code>127.0.0.53</code>，因为 systemd-resolved 包含一个「DNS服务」，它监听 <code>127.0.0.53</code>。此时操作系统的域名解析请求全部发到这个服务，再由它进行后续的解析。<code>resolvctl status</code> (老版本使用 <code>systemd-resolve --status</code>) 可以查看服务状态，输出信息如下：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> resolvectl status <span class="o">||</span> systemd-resolve --status
+<span class="go">Global</span>
+<span class="go">       LLMNR setting: yes</span>
+<span class="go">MulticastDNS setting: yes</span>
+<span class="go">  DNSOverTLS setting: no</span>
+<span class="go">      DNSSEC setting: allow-downgrade</span>
+<span class="go">    DNSSEC supported: yes</span>
+<span class="go">  Current DNS Server: 119.29.29.29</span>
+<span class="go">         DNS Servers: 119.29.29.29</span>
+<span class="go">                      223.5.5.5</span>
+<span class="go">…</span>
+</pre></div>
+
+
+<p>上面可以看到，systemd-resolved 后端使用 <code>119.29.29.29</code> 作为「DNS服务器」，通过 <code>/etc/systemd/resolved.conf</code> 这个文件进行管理，配置如下：</p>
+<div class="codehilite"><pre><span></span><span class="k">[Resolve]</span>
+<span class="na">DNS</span><span class="o">=</span><span class="s">119.29.29.29 223.5.5.5</span>
+<span class="na">DNSSEC</span><span class="o">=</span><span class="s">false</span>
+</pre></div>
+
+
+<p>默认情况下 <code>DNS=</code> 为空，这时会使用网卡的 DNS，即动态管理，也可以像上面那样配置为静态的。修改了配置后需要重启服务才能生效 <code>sudo systemctl restart systemd-resolved</code>。</p>
+<h3 id="etcresolvconf">锁定 /etc/resolv.conf</h3>
+<p>如果长期使用固定的 DNS，也可以直接配置 <code>/etc/resolv.conf</code>，然后将其锁定，以确保它不被其他程序修改掉。像下面这样操作:</p>
+<div class="codehilite"><pre><span></span>sudo rm -f /etc/resolv.conf
+<span class="nb">echo</span> <span class="s2">&quot;nameserver 119.29.29.29&quot;</span> <span class="p">|</span> sudo tee /etc/resolv.conf
+<span class="nb">echo</span> <span class="s2">&quot;nameserver 223.5.5.5&quot;</span> <span class="p">|</span> sudo tee -a /etc/resolv.conf
+sudo chattr +i /etc/resolv.conf
+</pre></div>
+
+
+<p><code>chattr +i</code> 可锁定文件，此时文件不可修改，<code>lsattr /etc/resolv.conf</code> 可以看到文件有个 <code>i</code> 属性，<code>chattr -i /etc/resolv.conf</code> 可解除锁定。</p>
                 
                   
                 
@@ -1057,7 +1205,7 @@ sudo apt install code
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../networking/configuration/" title="网络配置" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../file-permission/linux-fhs/" title="Linux 目录结构简介" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1066,19 +1214,19 @@ sudo apt install code
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                网络配置
+                Linux 目录结构简介
               </span>
             </div>
           </a>
         
         
-          <a href="../../managing-user/user-and-group/" title="管理用户和组" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../iproute2/" title="iproute2" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                管理用户和组
+                iproute2
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
