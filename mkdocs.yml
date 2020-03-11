@@ -45,7 +45,7 @@ nav:
   - '管理网络':
       - '配置网络' : 'network/configuration.md'
       - 'iproute2' : 'network/iproute2.md'
-  - '软件包管理':
+  - '管理软件包':
     - '使用 apt 安装软件': 'package-management/apt.md'
     - 'dpkg': 'package-management/dpkg.md'
   - '管理用户和组': 'managing-user/user-and-group.md'
