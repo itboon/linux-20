@@ -26,37 +26,37 @@ google_analytics:
 nav:
   - '关于本书': 'index.md'
   - 'Linux 基础组件': 'linux/linux.md'
-  - '终端和 shell': 'linux/tty-shell.md'
-  - '选择 shell': 'linux/choose-shell.md'
-  - 'bash shell':
-      - '基础命令简介' : 'bash/basic-commands.md'
-      - '环境变量' : 'bash/shell-env.md'
-      - 'shell 语法' : 'bash/shell-syntax.md'
-      - 'shell 字符扩展' : 'bash/shell-expansions.md'
-      - '管道和重定向' : 'bash/shell-redirect.md'
-      - 'shell 条件语句' : 'bash/shell-conditional.md'
-      - 'shell 循环语句' : 'bash/shell-loop.md'
-      - '执行文件' : 'bash/exec-file.md'
-  - '文件权限':
-      - '文件权限基础' : 'file-permission/basic.md'
-      - 'chmod 修改文件权限' : 'file-permission/chmod.md'
-      - 'chown 修改文件归属' : 'file-permission/chown.md'
-      - 'Linux 目录结构简介' : 'file-permission/linux-fhs.md'
-  - '管理网络':
-      - '配置网络' : 'network/configuration.md'
-      - 'iproute2' : 'network/iproute2.md'
-  - '管理软件包':
-    - '使用 apt 安装软件': 'package-management/apt.md'
-    - 'dpkg': 'package-management/dpkg.md'
-  - '管理用户和组': 'managing-user/user-and-group.md'
-  - 'systemd':
-      - 'systemd 和 systemctl' : 'systemd/systemd.md'
-      - '基于 systemd 部署服务' : 'systemd/deploying-service.md'
-  - '文本处理':
-      - 'grep 与正则表达式' : 'text-sculpting/grep-regexp.md'
-      - 'sed 流编辑器' : 'text-sculpting/sed.md'
-      - 'gawk 基础用法' : 'text-sculpting/awk.md'
-  - 'docker':
-      - '初试 docker' : 'docker/docker.md'
-      - 'docker compose' : 'docker/docker-compose.md'
-      - '反向代理和负载均衡' : 'docker/docker-lb.md'
+  - '1 bash shell':
+      - '1.1 终端和 shell': 'bash/tty-shell.md'
+      - '1.2 选择 shell': 'bash/choose-shell.md'
+      - '1.3 基础命令简介' : 'bash/basic-commands.md'
+      - '1.4 环境变量' : 'bash/shell-env.md'
+      - '1.5 shell 语法' : 'bash/shell-syntax.md'
+      - '1.6 shell 字符扩展' : 'bash/shell-expansions.md'
+      - '1.7 管道和重定向' : 'bash/shell-redirect.md'
+      - '1.8 shell 条件语句' : 'bash/shell-conditional.md'
+      - '1.9 shell 循环语句' : 'bash/shell-loop.md'
+      - '1.10 执行文件' : 'bash/exec-file.md'
+  - '2 文件权限':
+      - '2.1 文件权限基础' : 'file-permission/basic.md'
+      - '2.2 chmod 修改文件权限' : 'file-permission/chmod.md'
+      - '2.3 chown 修改文件归属' : 'file-permission/chown.md'
+      - '2.4 Linux 目录结构简介' : 'file-permission/linux-fhs.md'
+  - '3 管理网络':
+      - '3.1 配置网络' : 'network/configuration.md'
+      - '3.2 iproute2' : 'network/iproute2.md'
+  - '4 管理软件包':
+    - '4.1 使用 apt 安装软件': 'package-management/apt.md'
+    - '4.2 dpkg': 'package-management/dpkg.md'
+  - '5 管理用户和组': 'managing-user/user-and-group.md'
+  - '6 systemd':
+      - '6.1 systemd 和 systemctl' : 'systemd/systemd.md'
+      - '6.2 基于 systemd 部署服务' : 'systemd/deploying-service.md'
+  - '7 文本处理':
+      - '7.1 grep 与正则表达式' : 'text-sculpting/grep-regexp.md'
+      - '7.2 sed 流编辑器' : 'text-sculpting/sed.md'
+      - '7.3 gawk 基础用法' : 'text-sculpting/awk.md'
+  - '8 docker':
+      - '8.1 初试 docker' : 'docker/docker.md'
+      - '8.2 docker compose' : 'docker/docker-compose.md'
+      - '8.3 反向代理和负载均衡' : 'docker/docker-lb.md'
