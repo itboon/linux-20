@@ -13,7 +13,7 @@
         <meta name="description" content="Linux 入门书籍，适用于「Debian/Ubuntu 相关发行版」">
       
       
-        <link rel="canonical" href="https://itboon.github.io/linux-20/bash/exec-file/">
+        <link rel="canonical" href="https://itboon.github.io/linux-20/bash/tty-shell/">
       
       
       
@@ -40,7 +40,7 @@
     
     
       
-        <title>1.10 执行文件 - Debian/Ubuntu Book《Linux 二零》</title>
+        <title>1.1 终端和 shell - Debian/Ubuntu Book《Linux 二零》</title>
       
     
     
@@ -106,7 +106,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#shell" tabindex="1" class="md-skip">
         跳转至
       </a>
     
@@ -132,7 +132,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                1.10 执行文件
+                1.1 终端和 shell
               
             </span>
           
@@ -286,11 +286,103 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../tty-shell/" title="1.1 终端和 shell" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        1.1 终端和 shell
+      </label>
+    
+    <a href="./" title="1.1 终端和 shell" class="md-nav__link md-nav__link--active">
       1.1 终端和 shell
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目录</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    用户界面
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    图形界面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    终端
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tty" class="md-nav__link">
+    tty
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_2" class="md-nav__link">
+    终端和 shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_3" class="md-nav__link">
+    图形界面使用 shell
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -394,49 +486,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        1.10 执行文件
-      </label>
-    
-    <a href="./" title="1.10 执行文件" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../exec-file/" title="1.10 执行文件" class="md-nav__link">
       1.10 执行文件
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目录</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    当前进程和子进程的区别
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -850,8 +904,62 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    用户界面
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shell_1" class="md-nav__link">
+    shell
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    当前进程和子进程的区别
+    图形界面
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    终端
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tty" class="md-nav__link">
+    tty
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_2" class="md-nav__link">
+    终端和 shell
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell_3" class="md-nav__link">
+    图形界面使用 shell
   </a>
   
 </li>
@@ -873,41 +981,67 @@
               
                 
                 
-                <h1 id="_1">执行文件</h1>
-<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
-
-<span class="nv">foo</span><span class="o">=</span><span class="s2">&quot;linux-20&quot;</span>
-ps
+                <h1 id="shell">终端和 shell</h1>
+<h2 id="_1">用户界面</h2>
+<p>对于 Linux 用户来说，最关心的当然是用户界面。用户界面也称为 shell，有「命令行界面」(CLI) 和「图形界面」(GUI)。因为它处在操作系统的最外层，所以称之为 shell (壳)。</p>
+<p>中文环境里面独立出现的 shell 通常特指「命令行 shell」，而不将图形界面称为 shell。Unix-like 操作系统上的「命令行 shell」 又称 "Unix shell"。为了表达简练，后文中单独出现的 shell 特指 "Unix shell"。</p>
+<h3 id="shell_1">shell</h3>
+<p>shell 既是用户与操作系统交互的界面，也是一门脚本语言，支持交互模式和非交互模式。交互模式下，接收键盘输入的命令。非交互模式下，从文件读取一连串的命令并执行，此文件称为 shell 脚本。</p>
+<p>shell 为 Linux 上面丰富多样的程序提供了用户界面，并且支持组合使用这些程序。使用 shell 脚本，用户可以灵活和高效地完成工作任务。</p>
+<p>此外 shell 还提供了专门为交互使用而设计的功能，包括作业控制、命令行编辑、命令历史记录和命令别名。</p>
+<h3 id="_2">图形界面</h3>
+<p>对于 Linux，图形界面是可选的，但它对于操作系统是举足轻重的。</p>
+<p>早期的计算机只有「命令行界面」，那时候计算机是专业人员的工具。图形界面用起来比较舒适，上手容易，它能满足各类人群的需求。可以说图形界面推动了计算机 (包括移动终端) 迅速普及。</p>
+<p>对于使用 shell 工作的人群来说，通过图形界面可以舒适地使用 shell。</p>
+<div class="codehilite"><pre><span></span><span class="err">*♥.•´¸.•*´✶´♡ ¸.•*´´♡🌼🍃🌼🍃*</span>
+<span class="err">*_🌈○💙_Good morning❤🌹*</span>
+<span class="err">*💚.•´¸.•*´✶´♡ ¸.•*´´♡⛅*</span>
+<span class="err">*° ☆ ° ˛*˛☆_Π____*。*˚☆*</span>
+<span class="err">*˚ ˛★˛•˚ */______/~＼。˚ ˚ ˛*</span>
+<span class="err">*˚ ˛•˛• ˚ ｜ 田田 ｜門｜ ˚*</span>
+<span class="err">*🌴╬═🌴╬╬🌴╬╬🌴═╬╬═🌴*</span>
 </pre></div>
 
 
-<p>将上面的内容保存为 <code>foo.sh</code> 文件，有以下方式可以执行该文件：</p>
+<h2 id="_3">终端</h2>
+<p>终端 (terminal) 是用户与操作系统用户界面 (shell) 进行交互的设备。早期的计算机终端是一类硬件设备，一台计算机可以连接多个终端机供多个用户使用。</p>
+<p>随着技术的发展，计算机逐渐淘汰了笨重的硬件终端机，取而代之的是软件终端，即虚拟终端。Linux 上与终端相关的术语如下：</p>
 <ul>
-<li><code>./foo.sh</code> 创建子进程并执行文件，需要文件有可执行权限。</li>
-<li><code>bash ./foo.sh</code> 创建子进程并执行文件。</li>
-<li><code>. ./foo.sh</code> 在当前进程执行。</li>
-<li><code>source ./foo.sh</code> 等同于 <code>. ./foo.sh</code>。</li>
+<li>tty - 泛指终端，可以是硬件终端也可以是软件终端。tty 代表 TeleTYpewriter，它曾是早期计算机的硬件终端，Linux 一直沿用这个名字作为终端的代名词。</li>
+<li>pty - 仿真 tty，即仿真终端，也称伪终端。</li>
+<li>ptmx, pts - pty 主端和从端。</li>
 </ul>
-<p>执行文件时如果文件路径不包含斜杠 <code>/</code>，那么会优先到 <code>$PATH</code> 下面去搜寻文件。因为 <code>.</code> 代表当前目录，<code>./foo.sh</code> 这种写法就明确了是当前目录下的文件，避免了不确定性。</p>
-<p>第一行 <code>#!/bin/bash</code> 指定 <code>/bin/bash</code> 作为解释器，省略这一行将使用默认解释器。</p>
-<h2 id="_2">当前进程和子进程的区别</h2>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  chmod a+x foo.sh
-<span class="gp">$</span>  
-<span class="gp">$</span>  <span class="nb">unset</span> foo<span class="p">;</span> ./foo.sh<span class="p">;</span> <span class="nb">echo</span> <span class="nv">$foo</span>
-<span class="go">  PID TTY          TIME CMD</span>
-<span class="go">11411 pts/2    00:00:00 foo.sh</span>
-<span class="go">11412 pts/2    00:00:00 ps</span>
-<span class="go">22825 pts/2    00:00:09 bash</span>
-
-<span class="gp">$</span>  <span class="nb">unset</span> foo<span class="p">;</span> . ./foo.sh<span class="p">;</span> <span class="nb">echo</span> <span class="nv">$foo</span>
-<span class="go">  PID TTY          TIME CMD</span>
-<span class="go">11414 pts/2    00:00:00 ps</span>
-<span class="go">22825 pts/2    00:00:09 bash</span>
-<span class="go">linux-20</span>
+<h3 id="tty">tty</h3>
+<p><code>tty</code> 命令可以查看当前 shell 所属的 tty 信息：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  tty
+<span class="go">/dev/pts/2</span>
 </pre></div>
 
 
-<p>可以看到，在当前进程中执行会把文件中定义的变量保留下来，而在子进程中执行则不会，这是最重要的区别。另外子进程不会继承父进程的局部变量，这也是一个因素。因此，当我们需要加载一个文件中的变量时则需要 <code>source</code> 的方式执行，<code>profile</code> 文件就需要这样执行；否则，优先在子进程中执行文件，这是常用的方式。</p>
+<p>上面的是在图形界面使用 pty 得到的信息，接下来按 Ctrl + Alt + F5 切换 tty (此 tty 是字符终端)，然后查看 tty：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  tty
+<span class="go">/dev/tty5</span>
+</pre></div>
+
+
+<p>以上 <code>/dev/pts/2</code>、<code>/dev/tty5</code> 分别对应不同的 tty：</p>
+<ul>
+<li><code>/dev/ttyN</code> 由操作系统核心组件管理，需要物理线缆连接才可使用，这样的 tty 也称为控制台终端。</li>
+<li><code>/dev/pts/N</code> 由「pty 程序」(比如 GNOME Terminal、SSH) 管理，每建立一个 pty 会话都会创建对应的 pts 文件。</li>
+</ul>
+<p><code>who</code> 可以查看所有登录的用户和对应的 tty：</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span>  who
+<span class="go">linux-20   tty2         Feb 15 11:14 (tty2)</span>
+<span class="go">user01     tty5         Feb 16 15:07</span>
+</pre></div>
+
+
+<p>上面显示 tty2 和 tty5，新打开的控制台终端对应 tty5 (因为前面使用 Ctrl + Alt + F5 切换，另外用户名和登录时间也可以作为判断依据)，说明原先使用的图形界面对应 tty2，按 Ctrl + Alt + F2 可返回。当图形界面崩溃了可切换到非图形的控制台终端进行诊断。</p>
+<h2 id="shell_2">终端和 shell</h2>
+<p>终端和 shell 需要配套使用，打开终端即运行 shell，每个终端都有与之对应的 shell 进程。</p>
+<p>终端负责将输入信息转化为控制序列，shell 负责将控制序列转化为命令。比如我们分别输入 <code>cd /tmp</code> 和 <code># cd /tmp</code>，对终端来说只是输入字符多少的问题，而对 shell 来说则代表完全不同的信息。</p>
+<h2 id="shell_3">图形界面使用 shell</h2>
+<p>上面已经说过了，在图形界面中可以通过「pty 程序」(比如 GNOME Terminal) 使用 shell，但是在陌生的图形界面上有时并不容易找到它。「pty 程序」一般包含关键字 "terminal" (终端)，可以通过搜索关键字得到。</p>
                 
                   
                 
@@ -929,7 +1063,7 @@ ps
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../shell-loop/" title="1.9 shell 循环语句" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../linux/linux/" title="Linux 基础组件" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -938,19 +1072,19 @@ ps
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
-                1.9 shell 循环语句
+                Linux 基础组件
               </span>
             </div>
           </a>
         
         
-          <a href="../../file-permission/basic/" title="2.1 文件权限基础" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../choose-shell/" title="1.2 选择 shell" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
-                2.1 文件权限基础
+                1.2 选择 shell
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
