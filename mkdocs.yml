@@ -42,21 +42,23 @@ nav:
       - '2.2 chmod 修改文件权限' : 'file-permission/chmod.md'
       - '2.3 chown 修改文件归属' : 'file-permission/chown.md'
       - '2.4 Linux 目录结构简介' : 'file-permission/linux-fhs.md'
-  - '3 管理网络':
-      - '3.1 配置网络' : 'network/configuration.md'
-      - '3.2 iproute2' : 'network/iproute2.md'
-  - '4 管理软件包':
-    - '4.1 使用 apt 安装软件': 'package-management/apt.md'
-    - '4.2 dpkg': 'package-management/dpkg.md'
-  - '5 管理用户和组': 'managing-user/user-and-group.md'
-  - '6 systemd':
-      - '6.1 systemd 和 systemctl' : 'systemd/systemd.md'
-      - '6.2 基于 systemd 部署服务' : 'systemd/deploying-service.md'
-  - '7 文本处理':
-      - '7.1 grep 与正则表达式' : 'text-sculpting/grep-regexp.md'
-      - '7.2 sed 流编辑器' : 'text-sculpting/sed.md'
-      - '7.3 gawk 基础用法' : 'text-sculpting/awk.md'
-  - '8 docker':
-      - '8.1 初试 docker' : 'docker/docker.md'
-      - '8.2 docker compose' : 'docker/docker-compose.md'
-      - '8.3 反向代理和负载均衡' : 'docker/docker-lb.md'
+  - '3 文本编辑器':
+      - '3.1 GNU nano': 'editor/nano.md'
+  - '4 管理网络':
+      - '4.1 配置网络' : 'network/configuration.md'
+      - '4.2 iproute2' : 'network/iproute2.md'
+  - '5 管理软件包':
+    - '5.1 使用 apt 安装软件': 'package-management/apt.md'
+    - '5.2 dpkg': 'package-management/dpkg.md'
+  - '6 管理用户和组': 'managing-user/user-and-group.md'
+  - '7 systemd':
+      - '7.1 systemd 和 systemctl' : 'systemd/systemd.md'
+      - '7.2 基于 systemd 部署服务' : 'systemd/deploying-service.md'
+  - '8 文本处理':
+      - '8.1 grep 与正则表达式' : 'text-sculpting/grep-regexp.md'
+      - '8.2 sed 流编辑器' : 'text-sculpting/sed.md'
+      - '8.3 gawk 基础用法' : 'text-sculpting/awk.md'
+  - '9 docker':
+      - '9.1 初试 docker' : 'docker/docker.md'
+      - '9.2 docker compose' : 'docker/docker-compose.md'
+      - '9.3 反向代理和负载均衡' : 'docker/docker-lb.md'
