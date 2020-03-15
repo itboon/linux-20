@@ -52,7 +52,7 @@ nano 完全使用键盘操作，界面底部显示部分常用快捷键，进入
 - <kbd>CTRL</kbd> + <kbd>U</kbd> 粘贴
 - <kbd>CTRL</kbd> + <kbd>Shift</kbd> + <kbd>Del</kbd> 删除左边的单词
 - <kbd>CTRL</kbd> + <kbd>Del</kbd> 删除右边的单词
-- <kbd>AltL</kbd> + <kbd>Del</kbd> 删除 (当前行或者被标记的区域)
+- <kbd>Alt</kbd> + <kbd>Del</kbd> 删除 (当前行或者被标记的区域)
 - <kbd>Alt</kbd> + <kbd>U</kbd> 撤销上一次动作
 - <kbd>CTRL</kbd> + <kbd>E</kbd> 恢复撤销的动作
 
