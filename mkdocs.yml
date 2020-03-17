@@ -37,6 +37,7 @@ nav:
       - '1.8 shell 条件语句' : 'bash/shell-conditional.md'
       - '1.9 shell 循环语句' : 'bash/shell-loop.md'
       - '1.10 执行文件' : 'bash/exec-file.md'
+      - '1.11 快捷键' : 'bash/shell-shortcuts.md'
   - '2 文件权限':
       - '2.1 文件权限基础' : 'file-permission/basic.md'
       - '2.2 chmod 修改文件权限' : 'file-permission/chmod.md'
