@@ -85,7 +85,7 @@ $  systemctl suspend
 $  systemctl hibernate
 ```
 
-通过 polkit 可实现普通用户使用 `systemctl` 进行电源管理，仅限本地登录的用户且没有其他活跃的登录会话时。安装 plokit：
+通过 polkit 可实现本地登录的普通用户使用 `systemctl` 进行电源管理。安装 plokit：
 
 ```
 $  sudo apt install policykit-1
