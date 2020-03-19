@@ -53,7 +53,7 @@ apt 从一个或多个「软件仓库」(源) 下载软件包并将其安装到�
 
 ### 配置国内镜像源
 
-这里以 Debian 10 和 Ubuntu 18.04 为例，其他版本请参考相应的文档：<https://mirrors.cloud.tencent.com/>
+这里以 Debian 10 和 Ubuntu 18.04 为例，其他版本请参考相应的文档：<https://developer.aliyun.com/mirror/>
 
 #### Debian 10
 
@@ -72,26 +72,30 @@ sudo apt update
 上面的操作可以稍微改进一下，将主机地址和系统版本替换为变量，如下：
 
 ``` shell
-aptHost="mirrors.cloud.tencent.com"
+sHost="mirrors.aliyun.com"
 release="buster"
 sudo tee /etc/apt/sources.list <<EOF
-deb http://${aptHost}/debian ${release} main
-deb-src http://${aptHost}/debian ${release} main
-deb http://${aptHost}/debian-security ${release}/updates main
-deb-src http://${aptHost}/debian-security ${release}/updates main
-deb http://${aptHost}/debian ${release}-updates main
-deb-src http://${aptHost}/debian ${release}-updates main
+deb http://${sHost}/debian ${release} main
+deb-src http://${sHost}/debian ${release} main
+deb http://${sHost}/debian-security ${release}/updates main
+deb-src http://${sHost}/debian-security ${release}/updates main
+deb http://${sHost}/debian ${release}-updates main
+deb-src http://${sHost}/debian ${release}-updates main
 EOF
 sudo apt update
 ```
 
 #### Ubuntu 18.04
 
-可以直接从网站下载配置文件，然后放到系统目录，操作如下：
-
-```
-curl -o sources.list http://mirrors.cloud.tencent.com/repo/ubuntu18_sources.list
-sudo mv sources.list /etc/apt/
+``` shell
+sudo tee /etc/apt/sources.list <<EOF
+deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted
+deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted
+deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted
+deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted
+EOF
 sudo apt update
 ```
 
