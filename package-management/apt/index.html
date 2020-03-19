@@ -1105,7 +1105,7 @@ sudo apt upgrade
 <h2 id="apt_2">配置 apt 源</h2>
 <p>apt 从一个或多个「软件仓库」(源) 下载软件包并将其安装到你的计算机上。源通常是网络服务器，例如官方的 DebianStable 仓库。因为网速问题，我们通常会选择国内的镜像服务器（腾讯软件源、阿里云开源镜像站、清华大学开源软件镜像站），或者使用私有的服务器。</p>
 <h3 id="_4">配置国内镜像源</h3>
-<p>这里以 Debian 10 和 Ubuntu 18.04 为例，其他版本请参考相应的文档：<a href="https://mirrors.cloud.tencent.com/">https://mirrors.cloud.tencent.com/</a></p>
+<p>这里以 Debian 10 和 Ubuntu 18.04 为例，其他版本请参考相应的文档：<a href="https://developer.aliyun.com/mirror/">https://developer.aliyun.com/mirror/</a></p>
 <h4 id="debian-10">Debian 10</h4>
 <div class="codehilite"><pre><span></span>sudo tee /etc/apt/sources.list <span class="s">&lt;&lt;EOF</span>
 <span class="s">deb https://mirrors.aliyun.com/debian buster main</span>
@@ -1120,25 +1120,30 @@ sudo apt update
 
 
 <p>上面的操作可以稍微改进一下，将主机地址和系统版本替换为变量，如下：</p>
-<div class="codehilite"><pre><span></span><span class="nv">aptHost</span><span class="o">=</span><span class="s2">&quot;mirrors.cloud.tencent.com&quot;</span>
+<div class="codehilite"><pre><span></span><span class="nv">sHost</span><span class="o">=</span><span class="s2">&quot;mirrors.aliyun.com&quot;</span>
 <span class="nv">release</span><span class="o">=</span><span class="s2">&quot;buster&quot;</span>
 sudo tee /etc/apt/sources.list <span class="s">&lt;&lt;EOF</span>
-<span class="s">deb http://${aptHost}/debian ${release} main</span>
-<span class="s">deb-src http://${aptHost}/debian ${release} main</span>
-<span class="s">deb http://${aptHost}/debian-security ${release}/updates main</span>
-<span class="s">deb-src http://${aptHost}/debian-security ${release}/updates main</span>
-<span class="s">deb http://${aptHost}/debian ${release}-updates main</span>
-<span class="s">deb-src http://${aptHost}/debian ${release}-updates main</span>
+<span class="s">deb http://${sHost}/debian ${release} main</span>
+<span class="s">deb-src http://${sHost}/debian ${release} main</span>
+<span class="s">deb http://${sHost}/debian-security ${release}/updates main</span>
+<span class="s">deb-src http://${sHost}/debian-security ${release}/updates main</span>
+<span class="s">deb http://${sHost}/debian ${release}-updates main</span>
+<span class="s">deb-src http://${sHost}/debian ${release}-updates main</span>
 <span class="s">EOF</span>
 sudo apt update
 </pre></div>
 
 
 <h4 id="ubuntu-1804">Ubuntu 18.04</h4>
-<p>可以直接从网站下载配置文件，然后放到系统目录，操作如下：</p>
-<div class="codehilite"><pre><span></span><span class="err">curl -o sources.list http://mirrors.cloud.tencent.com/repo/ubuntu18_sources.list</span>
-<span class="err">sudo mv sources.list /etc/apt/</span>
-<span class="err">sudo apt update</span>
+<div class="codehilite"><pre><span></span>sudo tee /etc/apt/sources.list <span class="s">&lt;&lt;EOF</span>
+<span class="s">deb http://mirrors.aliyun.com/ubuntu/ bionic main restricted</span>
+<span class="s">deb-src http://mirrors.aliyun.com/ubuntu/ bionic main restricted</span>
+<span class="s">deb http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted</span>
+<span class="s">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-security main restricted</span>
+<span class="s">deb http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted</span>
+<span class="s">deb-src http://mirrors.aliyun.com/ubuntu/ bionic-updates main restricted</span>
+<span class="s">EOF</span>
+sudo apt update
 </pre></div>
 
 
