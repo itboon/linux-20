@@ -1,0 +1,22 @@
+name: deploy to aliyun oss
+
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  linux-20_deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: gh-pages
+
+    - name: setup oss access
+      run: ossutil config -e oss-cn-hongkong.aliyuncs.com -i ${{ secrets.OSS_KEY_ID }} -k ${{ secrets.OSS_KEY_SECRET }}
+
+    - name: cp files to oss
+      run: ossutil cp -rf ./ oss://github-ci/
