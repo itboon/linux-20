@@ -21,7 +21,11 @@ jobs:
         OSS_DL_URL: http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
         OSS_DEST: oss://linux-20/
       run: |
-        pip3 install mkdocs mkdocs-material pygments
+        ln -sf /usr/bin/python3 /usr/bin/python
+        ln -sf /usr/bin/pip3 /usr/bin/pip
+        python --version
+        pip --version
+        pip install mkdocs mkdocs-material pygments
         mkdocs gh-deploy
 
         set -x
