@@ -1,0 +1,39 @@
+name: deploy mkdocs
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy-mkdocs:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: deploy
+      shell: bash
+      env:
+        OSS_KEY_ID: ${{ secrets.OSS_KEY_ID }}
+        OSS_KEY_SE: ${{ secrets.OSS_KEY_SECRET }}
+        OSS_EP: oss-cn-hongkong.aliyuncs.com
+        OSS_DL_URL: http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
+        OSS_DEST: oss://linux-20/
+      run: |
+        sudo apt-get install -y python3-venv
+        python3 -m venv /tmp/mkdocs
+        source /tmp/mkdocs/bin/activate
+        python --version
+        pip --version
+        pip install mkdocs mkdocs-material pygments
+        mkdocs gh-deploy
+
+        set -x
+
+        mkdir -p ${HOME}/bin
+        aliOSS="${HOME}/bin/ossutil"
+        curl -o $aliOSS -L $OSS_DL_URL
+        chmod a+rx $aliOSS
+        $aliOSS config -e $OSS_EP -i $OSS_KEY_ID -k $OSS_KEY_SE
+        $aliOSS cp -rf ./site/ $OSS_DEST
