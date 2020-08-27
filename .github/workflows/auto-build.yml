@@ -1,0 +1,25 @@
+name: build mkdocs
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-mkdocs:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: copy files to oss
+      shell: bash
+      run: |
+        sudo apt-get install -y python3-venv
+        python3 -m venv /tmp/mkdocs
+        source /tmp/mkdocs/bin/activate
+        python --version
+        pip --version
+        pip install mkdocs mkdocs-material pygments
+        mkdocs build
