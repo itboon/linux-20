@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: copy files to oss
+    - name: build
       shell: bash
       run: |
         sudo apt-get install -y python3-venv
