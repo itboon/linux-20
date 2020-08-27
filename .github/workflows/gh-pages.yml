@@ -21,11 +21,11 @@ jobs:
         OSS_DL_URL: http://gosspublic.alicdn.com/ossutil/1.6.10/ossutil64
         OSS_DEST: oss://linux-20/
       run: |
-        set -x
-
-        pip install --no-cache-dir mkdocs mkdocs-material pygments
+        pip install mkdocs mkdocs-material pygments
         mkdocs gh-deploy
         
+        set -x
+
         mkdir -p ${HOME}/bin
         aliOSS="${HOME}/bin/ossutil"
         curl -o $aliOSS -L $OSS_DL_URL
