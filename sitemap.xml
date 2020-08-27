@@ -1,158 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://itboon.github.io/linux-20/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/linux/linux/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/tty-shell/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/choose-shell/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/basic-commands/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/shell-env/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/shell-syntax/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/shell-expansions/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/shell-redirect/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/shell-conditional/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/shell-loop/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/exec-file/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/bash/shell-shortcuts/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/file-permission/basic/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/file-permission/chmod/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/file-permission/chown/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/file-permission/linux-fhs/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/editor/nano/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/network/configuration/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/network/iproute2/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/package-management/apt/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/package-management/dpkg/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/managing-user/user-and-group/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/systemd/systemd/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/systemd/deploying-service/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/text-sculpting/grep-regexp/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/text-sculpting/sed/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/text-sculpting/awk/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/docker/docker/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/docker/docker-compose/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
-    </url>
-    <url>
+    </url><url>
      <loc>https://itboon.github.io/linux-20/docker/docker-lb/</loc>
-     <lastmod>2020-03-19</lastmod>
+     <lastmod>2020-08-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>

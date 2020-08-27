@@ -1,14 +1,12 @@
 
 
 
-
 <!doctype html>
 <html lang="zh" class="no-js">
   <head>
     
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
       
         <meta name="description" content="Linux 入门书籍，适用于「Debian/Ubuntu 相关发行版」">
       
@@ -16,27 +14,8 @@
         <link rel="canonical" href="https://itboon.github.io/linux-20/text-sculpting/sed/">
       
       
-      
-        <meta name="lang:clipboard.copy" content="复制">
-      
-        <meta name="lang:clipboard.copied" content="已复制">
-      
-        <meta name="lang:search.language" content="ja">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="没有找到符合条件的结果">
-      
-        <meta name="lang:search.result.one" content="找到 1 个符合条件的结果">
-      
-        <meta name="lang:search.result.other" content="# 个符合条件的结果">
-      
-        <meta name="lang:search.tokenizer" content="[\uff0c\u3002]+">
-      
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.9">
     
     
       
@@ -44,119 +23,97 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.36ee6aaa.min.css">
       
       
     
-    
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
     
     
       
         
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-159908880-1", "auto")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-159908880-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
   </head>
   
+  
     <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
-        
-      </defs>
-    </svg>
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
-    
-      <a href="#sed" tabindex="1" class="md-skip">
-        跳转至
-      </a>
-    
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sed" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
     
       <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="https://itboon.github.io/linux-20/" title="Debian/Ubuntu Book《Linux 二零》" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Debian/Ubuntu Book《Linux 二零》
-            </span>
-            <span class="md-header-nav__topic">
-              
-                8.2 sed 流编辑器
-              
-            </span>
-          
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://itboon.github.io/linux-20/" title="Debian/Ubuntu Book《Linux 二零》" class="md-header-nav__button md-logo" aria-label="Debian/Ubuntu Book《Linux 二零》">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Debian/Ubuntu Book《Linux 二零》
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              8.2 sed 流编辑器
+            
+          </span>
         </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
       </button>
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
+        <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            键入以开始搜索
+            Initializing search
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -164,71 +121,56 @@
     </div>
   </div>
 </div>
+    
+    
+      <div class="md-header-nav__source">
         
-      </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
-
-
-  
-
-<a href="https://github.com/itboon/linux-20" title="前往 Github 仓库" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="https://github.com/itboon/linux-20" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     itboon/linux-20
   </div>
 </a>
-          </div>
-        </div>
-      
-    </div>
+      </div>
+    
   </nav>
 </header>
     
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
       
         
       
       
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
           
             
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="https://itboon.github.io/linux-20/" title="Debian/Ubuntu Book《Linux 二零》" class="md-nav__button md-logo">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://itboon.github.io/linux-20/" title="Debian/Ubuntu Book《Linux 二零》" class="md-nav__button md-logo" aria-label="Debian/Ubuntu Book《Linux 二零》">
       
-        <i class="md-icon"></i>
-      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
     </a>
     Debian/Ubuntu Book《Linux 二零》
   </label>
   
     <div class="md-nav__source">
       
-
-
-  
-
-<a href="https://github.com/itboon/linux-20" title="前往 Github 仓库" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
+<a href="https://github.com/itboon/linux-20" title="前往 GitHub 仓库" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
   <div class="md-source__repository">
     itboon/linux-20
   </div>
@@ -268,13 +210,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
       1 bash shell
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="1 bash shell" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         1 bash shell
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -424,13 +372,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       2 文件权限
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="2 文件权限" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         2 文件权限
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -496,13 +450,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       3 文本编辑器
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="3 文本编辑器" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         3 文本编辑器
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -532,13 +492,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
     
     <label class="md-nav__link" for="nav-6">
       4 管理网络
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="4 管理网络" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         4 管理网络
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -580,13 +546,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
     <label class="md-nav__link" for="nav-7">
       5 管理软件包
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="5 管理软件包" data-md-level="1">
       <label class="md-nav__title" for="nav-7">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         5 管理软件包
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -640,13 +612,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
       7 systemd
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="7 systemd" data-md-level="1">
       <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         7 systemd
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -690,13 +668,19 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
     
     <label class="md-nav__link" for="nav-10">
       8 文本处理
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="8 文本处理" data-md-level="1">
       <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         8 文本处理
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -723,13 +707,16 @@
 
   <li class="md-nav__item md-nav__item--active">
     
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         8.2 sed 流编辑器
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
       </label>
     
     <a href="./" title="8.2 sed 流编辑器" class="md-nav__link md-nav__link--active">
@@ -737,13 +724,18 @@
     </a>
     
       
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">目录</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -765,7 +757,7 @@
     替换命令语法
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="替换命令语法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -827,7 +819,7 @@
     sed 实践
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="sed 实践">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -848,10 +840,6 @@
     </nav>
   
 </li>
-      
-      
-      
-      
       
     </ul>
   
@@ -884,13 +872,19 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
     <label class="md-nav__link" for="nav-11">
       9 docker
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
+      </span>
     </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+    <nav class="md-nav" aria-label="9 docker" data-md-level="1">
       <label class="md-nav__title" for="nav-11">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        </span>
         9 docker
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -948,13 +942,18 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
-<nav class="md-nav md-nav--secondary">
+<nav class="md-nav md-nav--secondary" aria-label="目录">
   
   
     
   
   
-    <label class="md-nav__title" for="__toc">目录</label>
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目录
+    </label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
@@ -976,7 +975,7 @@
     替换命令语法
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="替换命令语法">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1038,7 +1037,7 @@
     sed 实践
   </a>
   
-    <nav class="md-nav">
+    <nav class="md-nav" aria-label="sed 实践">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1060,10 +1059,6 @@
   
 </li>
       
-      
-      
-      
-      
     </ul>
   
 </nav>
@@ -1077,18 +1072,21 @@
               
                 
                 
+                  
+                
+                
                 <h1 id="sed">sed 流编辑器</h1>
 <p>sed (stream editor) 即流编辑器，它读取输入流 (文件或来自管道的输入)，并依照一系列命令对内容进行编辑修改，最后将结果写入标准输出。</p>
 <p>sed 是很老牌的文本处理工具，它逐渐被其它工具所取代，例如 awk。但由于 sed 的几个命令非常简洁易用，比如替换、插入和删除，所以它仍然广受喜爱。</p>
 <p>一个简单的文本替换案例：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="c1"># 使用 sed</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  <span class="c1"># 使用 sed</span>
 <span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;A beautiful girl&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/girl/woman/&#39;</span>
 <span class="go">A beautiful woman</span>
 <span class="gp">$</span>  
 <span class="gp">$</span>  <span class="c1"># 使用 awk</span>
 <span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;A beautiful girl&quot;</span> <span class="p">|</span> awk <span class="s1">&#39;{gsub(/girl/,&quot;woman&quot;); print $0}&#39;</span>
 <span class="go">A beautiful woman</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="sed_1">sed 常用选项</h2>
@@ -1098,7 +1096,7 @@
 <li>-i[SUFFIX], --in-place[=SUFFIX], 直接修改文件，如果提供了 SUFFIX 将会备份</li>
 </ul>
 <p>sed 对文本进行修改的命令，默认只会将输出打印出来，加上 <code>-i</code> 直接对文件进行修改，例如：</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 将替换后的文本打印出来</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 将替换后的文本打印出来</span>
 sed <span class="s1">&#39;s/foo/bar/&#39;</span> file
 
 <span class="c1"># 对文件进行文本替换</span>
@@ -1106,24 +1104,24 @@ sed -i <span class="s1">&#39;s/foo/bar/&#39;</span> file
 
 <span class="c1"># 对文件进行文本替换，将会创建一个备份文件 file.sed</span>
 sed -i.sed <span class="s1">&#39;s/foo/bar/&#39;</span> file
-</pre></div>
+</code></pre></div>
 
 
 <p><code>-i</code> 与其它选项一起使用时应分开写，例如 <code>-i -E</code> 不能写成 <code>-iE</code>，请看下面的例子：</p>
-<div class="codehilite"><pre><span></span><span class="c1"># 下面两条命令是等价的</span>
+<div class="codehilite"><pre><span></span><code><span class="c1"># 下面两条命令是等价的</span>
 sed -Ei <span class="s1">&#39;...&#39;</span> file
 sed -E -i <span class="s1">&#39;...&#39;</span> file
 
 <span class="c1"># -iE 等价于 --in-place=E，会创建一个备份文件 fileE</span>
 sed -iE <span class="s1">&#39;...&#39;</span> file
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_1">正则表达式</h2>
 <p>GNU <code>sed -E</code> 使用 ERE 语法，与  <a href="../grep-regexp">grep ERE 语法</a> 一致。</p>
 <h2 id="_2">替换命令语法</h2>
 <p>替换命令的语法是 <code>s/regexp/replacement/</code>，例如：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  seq <span class="m">31</span> <span class="m">36</span> <span class="p">|</span> sed <span class="s1">&#39;s/33/replace/&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  seq <span class="m">31</span> <span class="m">36</span> <span class="p">|</span> sed <span class="s1">&#39;s/33/replace/&#39;</span>
 <span class="go">31</span>
 <span class="go">32</span>
 <span class="go">replace</span>
@@ -1138,12 +1136,12 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 <span class="go">34</span>
 <span class="go">3replace</span>
 <span class="go">36</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="_3">自定义分割符</h3>
 <p>替换命令中的分割符 <code>/</code> 也可以用其他符号代替，例如：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="c1"># 常规书写方式</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  <span class="c1"># 常规书写方式</span>
 <span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;/bin/sh test.sh&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/\/bin\/sh/\/bin\/bash/&#39;</span>
 <span class="go">/bin/bash test.sh</span>
 <span class="gp">$</span>  
@@ -1152,14 +1150,14 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 <span class="go">/bin/bash test.sh</span>
 <span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;/bin/sh test.sh&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s!/bin/sh!/bin/bash!&#39;</span>
 <span class="go">/bin/bash test.sh</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>上面这个例子需要在正则表达式中多次书写 <code>/</code> 符号，如果是 <code>s/regexp/replacement/</code> 这样的写法，正则表达式里面好几个 <code>/</code> 需要加转义字符，写出来非常难看。改成 <code>s%regexp%replacement%</code> 这样的写法会简洁很多。</p>
 <p>可以使用任意单个符号替代 <code>/</code>，恢复该符号的字面量需要加转义字符。</p>
 <h3 id="_4">行内定位</h3>
 <p>sed 默认对每行第 1 次匹配进行替换，也可以全部替换或者选择性替换，例如：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="c1"># 替换第 1 次匹配</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  <span class="c1"># 替换第 1 次匹配</span>
 <span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;a dog and a cat&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/a/A/&#39;</span>
 <span class="go">A dog and a cat</span>
 <span class="gp">$</span>  
@@ -1170,12 +1168,12 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 <span class="gp">$</span>  <span class="c1"># 替换所有匹配</span>
 <span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;a dog and a cat&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/a/A/g&#39;</span>
 <span class="go">A dog And A cAt</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="_5">行定位</h3>
 <p>可以明确指定行数或行区间，例如：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="c1"># 替换第三行</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  <span class="c1"># 替换第三行</span>
 <span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed <span class="s1">&#39;3s/$/foo/&#39;</span>
 <span class="go">1</span>
 <span class="go">2</span>
@@ -1199,24 +1197,24 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 <span class="go">foo4</span>
 <span class="go">foo5</span>
 <span class="go">foo6</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>上例中，正则表达式 <code>/$/</code> 匹配行尾，此时替换命令可以在行尾添加文本。同样 <code>/^/</code> 可以实现行首添加文本。行区间 <code>3,$</code> 代表从第三行到最后一行。</p>
 <h2 id="_6">删除行</h2>
 <p>命令 <code>d</code> 用于删除行，例如：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed <span class="s1">&#39;3d&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed <span class="s1">&#39;3d&#39;</span>
 <span class="go">1</span>
 <span class="go">2</span>
 <span class="go">4</span>
 <span class="go">5</span>
 <span class="go">6</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_7">修改行</h2>
 <p>命令 <code>c</code> 用于修改行，例如：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed <span class="s1">&#39;3c\change&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed <span class="s1">&#39;3c\change&#39;</span>
 <span class="go">1</span>
 <span class="go">2</span>
 <span class="go">change</span>
@@ -1231,13 +1229,13 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 <span class="go">change</span>
 <span class="go">change</span>
 <span class="go">end</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>修改命令 <code>c</code> 与替换命令 <code>s</code> 不同，它相当于删除旧行再插入新行。</p>
 <h2 id="_8">插入和附加新行</h2>
 <p>命令 <code>i</code> 在匹配的行前面插入新行。命令 <code>a</code> 在匹配的行后面附加新行。请看下面的例子：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed <span class="s1">&#39;6i\insert&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed <span class="s1">&#39;6i\insert&#39;</span>
 <span class="go">1</span>
 <span class="go">2</span>
 <span class="go">3</span>
@@ -1253,12 +1251,12 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 <span class="go">5</span>
 <span class="go">6</span>
 <span class="go">append</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="_9">一次执行多条命令</h2>
 <p><code>-e</code> 选项可以执行多条命令，例如：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed  -e <span class="s1">&#39;2d&#39;</span> -e <span class="s1">&#39;5d&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed  -e <span class="s1">&#39;2d&#39;</span> -e <span class="s1">&#39;5d&#39;</span>
 <span class="go">1</span>
 <span class="go">3</span>
 <span class="go">4</span>
@@ -1269,21 +1267,21 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 <span class="go">3</span>
 <span class="go">4</span>
 <span class="go">6</span>
-</pre></div>
+</code></pre></div>
 
 
 <p><code>;</code> 分割多条命令，例如：</p>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed  -e <span class="s1">&#39;2d; 5d&#39;</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  seq <span class="m">6</span> <span class="p">|</span> sed  -e <span class="s1">&#39;2d; 5d&#39;</span>
 <span class="go">1</span>
 <span class="go">3</span>
 <span class="go">4</span>
 <span class="go">6</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="sed_2">sed 实践</h2>
 <h3 id="apt">修改 apt 源</h3>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="c1"># 源文件</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  <span class="c1"># 源文件</span>
 <span class="gp">$</span>  cat /etc/apt/sources.list 
 <span class="go">deb http://deb.debian.org/debian buster main</span>
 <span class="go">deb-src http://deb.debian.org/debian buster main</span>
@@ -1307,11 +1305,11 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 
 <span class="go">deb http://mirrors.aliyun.com/debian buster-updates main</span>
 <span class="go">deb-src http://mirrors.aliyun.com/debian buster-updates main</span>
-</pre></div>
+</code></pre></div>
 
 
 <h3 id="profile">修改 profile 文件</h3>
-<div class="codehilite"><pre><span></span><span class="gp">$</span>  <span class="c1"># 写入样例数据</span>
+<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  <span class="c1"># 写入样例数据</span>
 <span class="gp">$</span>  sed -i <span class="s1">&#39;$a\export EDITOR=nano&#39;</span> ~/.profile
 <span class="gp">$</span>  sed -i <span class="s1">&#39;$a\export EDITOR=vim&#39;</span> ~/.profile
 <span class="gp">$</span>  grep <span class="s1">&#39;export EDITOR=&#39;</span> ~/.profile
@@ -1326,13 +1324,10 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 <span class="hll"><span class="gp">$</span>  sed -i <span class="s1">&#39;$a\export EDITOR=/usr/bin/vim&#39;</span> ~/.profile
 </span><span class="gp">$</span>  grep <span class="s1">&#39;export EDITOR=&#39;</span> ~/.profile
 <span class="go">export EDITOR=/usr/bin/vim</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>上面这个例子，配置文件有多行重复的配置项，可以先删除再添加。</p>
-                
-                  
-                
                 
               
               
@@ -1349,34 +1344,34 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../grep-regexp/" title="8.1 grep 与正则表达式" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+          <a href="../grep-regexp/" title="8.1 grep 与正则表达式" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   上一页
                 </span>
                 8.1 grep 与正则表达式
-              </span>
+              </div>
             </div>
           </a>
         
         
-          <a href="../awk/" title="8.3 gawk 基础用法" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
+          <a href="../awk/" title="8.3 gawk 基础用法" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   下一页
                 </span>
                 8.3 gawk 基础用法
-              </span>
+              </div>
             </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
             </div>
           </a>
         
@@ -1387,11 +1382,10 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
     <div class="md-footer-meta__inner md-grid">
       <div class="md-footer-copyright">
         
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
       </div>
       
     </div>
@@ -1400,26 +1394,18 @@ sed -iE <span class="s1">&#39;...&#39;</span> file
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/vendor.df0def68.min.js"></script>
+      <script src="../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
       
-        
-        
-          
-          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
-          
-            
-              
-                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
-              
-              
-                <script src="../../assets/javascripts/lunr/lunr.ja.js"></script>
-              
-            
-          
-          
-        
-      
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      <script>
+        app = initialize({
+          base: "../..",
+          features: [],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
     
   </body>
