@@ -37,7 +37,7 @@ grep -v '^#' /etc/systemd/network/*.network /etc/network/interfaces /etc/netplan
 
 ### systemd-networkd
 
-在 `/etc/systemd/network` 目录下创建 `.network` 文件，例如 `/etc/systemd/network/50-eht0.network`。下面是 eth0 网卡使用 DHCP 的配置：
+在 `/etc/systemd/network` 目录下创建 `.network` 文件，例如 `/etc/systemd/network/50-eth0.network`。下面是 eth0 网卡使用 DHCP 的配置：
 
 ```
 [Match]
