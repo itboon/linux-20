@@ -1,4 +1,4 @@
-name: build mkdocs
+name: Build
 
 on:
   push:
@@ -6,16 +6,16 @@ on:
       - master
 
 jobs:
-  build-mkdocs:
-
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-    - name: build
+    - name: Build
       shell: bash
       run: |
+        set -ex
         sudo apt-get install -y python3-venv
         python3 -m venv /tmp/mkdocs
         source /tmp/mkdocs/bin/activate
