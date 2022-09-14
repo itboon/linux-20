@@ -8,8 +8,9 @@ theme:
   language: 'zh'
 
 markdown_extensions:
-  - 'codehilite'
-  - 'admonition'
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
 
 dev_addr: '127.0.0.1:7001'
 

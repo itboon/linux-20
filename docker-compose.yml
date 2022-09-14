@@ -2,14 +2,10 @@ version: '3.6'
 
 services:
   mkdocs:
-    build: .
+    image: "squidfunk/mkdocs-material"
     container_name: linux-20
     restart: unless-stopped
     ports:
-      - "127.0.6.2:80:80"
+      - "127.0.6.2:80:8000"
     volumes:
-      - ./:/mkdocs:ro
-networks:
-  default:
-    external:
-      name: compose-default
+      - ./:/docs:ro
