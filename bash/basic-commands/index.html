@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="zh" class="no-js">
   <head>
@@ -11,11 +9,11 @@
         <meta name="description" content="Linux 入门书籍，适用于「Debian/Ubuntu 相关发行版」">
       
       
+      
         <link rel="canonical" href="https://itboon.github.io/linux-20/bash/basic-commands/">
       
-      
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.9">
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.0">
     
     
       
@@ -23,33 +21,44 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.36ee6aaa.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2e8b5541.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
       
       
-    
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
-      
-    
+
     
     
     
       
         
-<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-159908880-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
     
     
   </head>
   
   
-    <body dir="ltr">
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
   
+    
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -66,54 +75,64 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://itboon.github.io/linux-20/" title="Debian/Ubuntu Book《Linux 二零》" class="md-header-nav__button md-logo" aria-label="Debian/Ubuntu Book《Linux 二零》">
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Debian/Ubuntu Book《Linux 二零》" class="md-header__button md-logo" aria-label="Debian/Ubuntu Book《Linux 二零》" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
-    <label class="md-header-nav__button md-icon" for="__drawer">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
     </label>
-    <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
             Debian/Ubuntu Book《Linux 二零》
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
             
               1.3 基础命令简介
             
           </span>
         </div>
-      
+      </div>
     </div>
     
-      <label class="md-header-nav__button md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
       </label>
-      
-<div class="md-search" data-md-component="search" role="dialog">
+      <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
       </label>
-      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
-      </button>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Initializing search
+            正在初始化搜索引擎
           </div>
           <ol class="md-search-result__list"></ol>
         </div>
@@ -123,12 +142,11 @@
 </div>
     
     
-      <div class="md-header-nav__source">
-        
-<a href="https://github.com/itboon/linux-20" title="前往 GitHub 仓库" class="md-source">
+      <div class="md-header__source">
+        <a href="https://github.com/itboon/linux-20" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     itboon/linux-20
@@ -137,39 +155,43 @@
       </div>
     
   </nav>
+  
 </header>
     
     <div class="md-container" data-md-component="container">
       
+      
         
-      
-      
+          
         
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://itboon.github.io/linux-20/" title="Debian/Ubuntu Book《Linux 二零》" class="md-nav__button md-logo" aria-label="Debian/Ubuntu Book《Linux 二零》">
+    <a href="../.." title="Debian/Ubuntu Book《Linux 二零》" class="md-nav__button md-logo" aria-label="Debian/Ubuntu Book《Linux 二零》" data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
 
     </a>
     Debian/Ubuntu Book《Linux 二零》
   </label>
   
     <div class="md-nav__source">
-      
-<a href="https://github.com/itboon/linux-20" title="前往 GitHub 仓库" class="md-source">
+      <a href="https://github.com/itboon/linux-20" title="前往仓库" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     itboon/linux-20
@@ -183,24 +205,15 @@
       
       
 
-
-  <li class="md-nav__item">
-    <a href="../.." title="关于本书" class="md-nav__link">
-      关于本书
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../linux/linux/" title="Linux 基础组件" class="md-nav__link">
-      Linux 基础组件
-    </a>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        关于本书
+      </a>
+    </li>
+  
 
     
       
@@ -208,91 +221,112 @@
       
 
   
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      1 bash shell
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="1 bash shell" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        1 bash shell
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../tty-shell/" title="1.1 终端和 shell" class="md-nav__link">
-      1.1 终端和 shell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../choose-shell/" title="1.2 选择 shell" class="md-nav__link">
-      1.2 选择 shell
-    </a>
-  </li>
-
-        
-          
-          
-          
-
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/linux/" class="md-nav__link">
+        Linux 基础组件
+      </a>
+    </li>
   
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
       
+      
+      
+
+  
+  
     
+  
+  
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          1 bash shell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="1 bash shell" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          1 bash shell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tty-shell/" class="md-nav__link">
+        1.1 终端和 shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../choose-shell/" class="md-nav__link">
+        1.2 选择 shell
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          1.3 基础命令简介
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         1.3 基础命令简介
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="1.3 基础命令简介" class="md-nav__link md-nav__link--active">
-      1.3 基础命令简介
-    </a>
-    
+      </a>
       
+        
+
 <nav class="md-nav md-nav--secondary" aria-label="目录">
+  
   
   
     
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       目录
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#echo-cd-pwd-ls-cat" class="md-nav__link">
@@ -419,535 +453,619 @@
     </ul>
   
 </nav>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell-env/" title="1.4 环境变量" class="md-nav__link">
-      1.4 环境变量
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell-syntax/" title="1.5 shell 语法" class="md-nav__link">
-      1.5 shell 语法
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell-expansions/" title="1.6 shell 字符扩展" class="md-nav__link">
-      1.6 shell 字符扩展
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell-redirect/" title="1.7 管道和重定向" class="md-nav__link">
-      1.7 管道和重定向
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell-conditional/" title="1.8 shell 条件语句" class="md-nav__link">
-      1.8 shell 条件语句
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell-loop/" title="1.9 shell 循环语句" class="md-nav__link">
-      1.9 shell 循环语句
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../exec-file/" title="1.10 执行文件" class="md-nav__link">
-      1.10 执行文件
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../shell-shortcuts/" title="1.11 快捷键" class="md-nav__link">
-      1.11 快捷键
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
       
-      
-      
+    </li>
+  
 
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      2 文件权限
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="2 文件权限" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        2 文件权限
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell-env/" class="md-nav__link">
+        1.4 环境变量
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell-syntax/" class="md-nav__link">
+        1.5 shell 语法
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell-expansions/" class="md-nav__link">
+        1.6 shell 字符扩展
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../file-permission/basic/" title="2.1 文件权限基础" class="md-nav__link">
-      2.1 文件权限基础
-    </a>
-  </li>
-
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell-redirect/" class="md-nav__link">
+        1.7 管道和重定向
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell-conditional/" class="md-nav__link">
+        1.8 shell 条件语句
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell-loop/" class="md-nav__link">
+        1.9 shell 循环语句
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../file-permission/chmod/" title="2.2 chmod 修改文件权限" class="md-nav__link">
-      2.2 chmod 修改文件权限
-    </a>
-  </li>
-
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exec-file/" class="md-nav__link">
+        1.10 执行文件
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shell-shortcuts/" class="md-nav__link">
+        1.11 快捷键
+      </a>
+    </li>
+  
+
+            
           
-
-
-  <li class="md-nav__item">
-    <a href="../../file-permission/chown/" title="2.3 chown 修改文件归属" class="md-nav__link">
-      2.3 chown 修改文件归属
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../file-permission/linux-fhs/" title="2.4 Linux 目录结构简介" class="md-nav__link">
-      2.4 Linux 目录结构简介
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      3 文本编辑器
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="3 文本编辑器" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        3 文本编辑器
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../editor/nano/" title="3.1 GNU nano" class="md-nav__link">
-      3.1 GNU nano
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
       
       
       
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
-    
-    <label class="md-nav__link" for="nav-6">
-      4 管理网络
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="4 管理网络" data-md-level="1">
-      <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        4 管理网络
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+      
+        <label class="md-nav__link" for="__nav_4">
+          2 文件权限
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="2 文件权限" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          2 文件权限
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-permission/basic/" class="md-nav__link">
+        2.1 文件权限基础
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-permission/chmod/" class="md-nav__link">
+        2.2 chmod 修改文件权限
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-permission/chown/" class="md-nav__link">
+        2.3 chown 修改文件归属
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../network/configuration/" title="4.1 配置网络" class="md-nav__link">
-      4.1 配置网络
-    </a>
-  </li>
-
-        
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../file-permission/linux-fhs/" class="md-nav__link">
+        2.4 Linux 目录结构简介
+      </a>
+    </li>
+  
+
+            
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../network/iproute2/" title="4.2 iproute2" class="md-nav__link">
-      4.2 iproute2
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      5 管理软件包
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="5 管理软件包" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        5 管理软件包
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          3 文本编辑器
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="3 文本编辑器" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          3 文本编辑器
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/nano/" class="md-nav__link">
+        3.1 GNU nano
+      </a>
+    </li>
+  
+
+            
           
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../package-management/apt/" title="5.1 使用 apt 安装软件" class="md-nav__link">
-      5.1 使用 apt 安装软件
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../package-management/dpkg/" title="5.2 dpkg" class="md-nav__link">
-      5.2 dpkg
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          4 管理网络
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="4 管理网络" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          4 管理网络
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/configuration/" class="md-nav__link">
+        4.1 配置网络
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../managing-user/user-and-group/" title="6 管理用户和组" class="md-nav__link">
-      6 管理用户和组
-    </a>
-  </li>
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../network/iproute2/" class="md-nav__link">
+        4.2 iproute2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
-    
-    <label class="md-nav__link" for="nav-9">
-      7 systemd
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="7 systemd" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        7 systemd
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          5 管理软件包
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="5 管理软件包" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          5 管理软件包
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../package-management/apt/" class="md-nav__link">
+        5.1 使用 apt 安装软件
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../package-management/dpkg/" class="md-nav__link">
+        5.2 dpkg
+      </a>
+    </li>
+  
+
+            
           
-
-
-  <li class="md-nav__item">
-    <a href="../../systemd/systemd/" title="7.1 systemd 和 systemctl" class="md-nav__link">
-      7.1 systemd 和 systemctl
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../systemd/deploying-service/" title="7.2 基于 systemd 部署服务" class="md-nav__link">
-      7.2 基于 systemd 部署服务
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+        </ul>
+      </nav>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
-    
-    <label class="md-nav__link" for="nav-10">
-      8 文本处理
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="8 文本处理" data-md-level="1">
-      <label class="md-nav__title" for="nav-10">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        8 文本处理
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../text-sculpting/grep-regexp/" title="8.1 grep 与正则表达式" class="md-nav__link">
-      8.1 grep 与正则表达式
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../text-sculpting/sed/" title="8.2 sed 流编辑器" class="md-nav__link">
-      8.2 sed 流编辑器
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../text-sculpting/awk/" title="8.3 gawk 基础用法" class="md-nav__link">
-      8.3 gawk 基础用法
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../managing-user/user-and-group/" class="md-nav__link">
+        6 管理用户和组
+      </a>
+    </li>
+  
 
     
       
       
       
 
-
-  <li class="md-nav__item md-nav__item--nested">
+  
+  
+  
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_9">
+          7 systemd
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="7 systemd" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          7 systemd
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systemd/systemd/" class="md-nav__link">
+        7.1 systemd 和 systemctl
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../systemd/deploying-service/" class="md-nav__link">
+        7.2 基于 systemd 部署服务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
     
-    <label class="md-nav__link" for="nav-11">
-      9 docker
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
-    </label>
-    <nav class="md-nav" aria-label="9 docker" data-md-level="1">
-      <label class="md-nav__title" for="nav-11">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
-        9 docker
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
+      
+      
+      
 
-
-  <li class="md-nav__item">
-    <a href="../../docker/docker/" title="9.1 初试 docker" class="md-nav__link">
-      9.1 初试 docker
-    </a>
-  </li>
-
-        
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10">
+          8 文本处理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="8 文本处理" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          8 文本处理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../text-sculpting/grep-regexp/" class="md-nav__link">
+        8.1 grep 与正则表达式
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../text-sculpting/sed/" class="md-nav__link">
+        8.2 sed 流编辑器
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../text-sculpting/awk/" class="md-nav__link">
+        8.3 gawk 基础用法
+      </a>
+    </li>
+  
 
-
-  <li class="md-nav__item">
-    <a href="../../docker/docker-compose/" title="9.2 docker compose" class="md-nav__link">
-      9.2 docker compose
-    </a>
-  </li>
-
-        
+            
           
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_11">
+          9 docker
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="9 docker" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          9 docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/docker/" class="md-nav__link">
+        9.1 初试 docker
+      </a>
+    </li>
+  
+
+            
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/docker-compose/" class="md-nav__link">
+        9.2 docker compose
+      </a>
+    </li>
+  
 
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/docker-lb/" class="md-nav__link">
+        9.3 反向代理和负载均衡
+      </a>
+    </li>
+  
 
-  <li class="md-nav__item">
-    <a href="../../docker/docker-lb/" title="9.3 反向代理和负载均衡" class="md-nav__link">
-      9.3 反向代理和负载均衡
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
 
     
   </ul>
@@ -957,23 +1075,24 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
 <nav class="md-nav md-nav--secondary" aria-label="目录">
+  
   
   
     
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       目录
     </label>
-    <ul class="md-nav__list" data-md-scrollfix>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
   <a href="#echo-cd-pwd-ls-cat" class="md-nav__link">
@@ -1105,15 +1224,14 @@
               </div>
             
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
-              
-                
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
                   
-                
-                
-                <h1 id="shell">shell 基础命令简介</h1>
+
+
+<h1 id="shell">shell 基础命令简介</h1>
 <h2 id="echo-cd-pwd-ls-cat">最基础的命令 echo cd pwd ls cat</h2>
 <ul>
 <li><code>echo</code> 显示一行文本</li>
@@ -1123,11 +1241,11 @@
 <li><code>cat</code> 串联文件并打印，通常用来阅读文本文件</li>
 </ul>
 <p>例如：</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;Basic Commands&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;Basic Commands&quot;</span>
 <span class="go">Basic Commands</span>
-<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;查看文件&quot;</span>
+<span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;查看文件&quot;</span>
 <span class="go">查看文件</span>
-<span class="gp">$</span>  cat /etc/os-release 
+<span class="gp">$  </span>cat /etc/os-release 
 <span class="go">PRETTY_NAME=&quot;Debian GNU/Linux 10 (buster)&quot;</span>
 <span class="go">NAME=&quot;Debian GNU/Linux&quot;</span>
 <span class="go">VERSION_ID=&quot;10&quot;</span>
@@ -1137,49 +1255,45 @@
 <span class="go">HOME_URL=&quot;https://www.debian.org/&quot;</span>
 <span class="go">SUPPORT_URL=&quot;https://www.debian.org/support&quot;</span>
 <span class="go">BUG_REPORT_URL=&quot;https://bugs.debian.org/&quot;</span>
-<span class="gp">$</span>  
-<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;切换到用户主目录&quot;</span>
+<span class="gp">$  </span>
+<span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;切换到用户主目录&quot;</span>
 <span class="go">切换到用户主目录</span>
-<span class="gp">$</span>  <span class="nb">cd</span> ~
-<span class="gp">$</span>  
-<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;查看当前所在目录&quot;</span>
+<span class="gp">$  </span><span class="nb">cd</span> ~
+<span class="gp">$  </span>
+<span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;查看当前所在目录&quot;</span>
 <span class="go">查看当前所在目录</span>
-<span class="gp">$</span>  <span class="nb">pwd</span>
+<span class="gp">$  </span><span class="nb">pwd</span>
 <span class="go">/home/linux-20</span>
-<span class="gp">$</span>  
-<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;查看当前目录信息&quot;</span>
+<span class="gp">$  </span>
+<span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;查看当前目录信息&quot;</span>
 <span class="go">查看当前目录信息</span>
-<span class="gp">$</span>  ls
+<span class="gp">$  </span>ls
 <span class="go">图片  文档  下载  音乐  桌面  backup  bin  download  lib</span>
 <span class="go">... </span>
-<span class="gp">$</span>  
-<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;查看根目录信息&quot;</span>
+<span class="gp">$  </span>
+<span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;查看根目录信息&quot;</span>
 <span class="go">查看根目录信息</span>
-<span class="gp">$</span>  ls /
+<span class="gp">$  </span>ls /
 <span class="go">bin  dev  home  mnt  run  tmp  var  etc  lib  root  sbin  usr</span>
 <span class="go">... </span>
 </code></pre></div>
-
-
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>$</code> 是 shell 提示符，表示该行是 shell 命令，不以该符号开头的行是输出信息。上面第一行 <code>$  echo "Basic Commands"</code> 中 <code>echo "Basic Commands"</code> 是用户输入的命令，第二行 <code>Basic Commands</code> 是输出的信息。</p>
 </div>
 <h3 id="_1">简单创建文本文件</h3>
 <p><code>echo</code> 还可用于创建文本文件，请看下面的例子：</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;some text&quot;</span> &gt; example.txt 
-<span class="gp">$</span>  cat example.txt 
+<div class="highlight"><pre><span></span><code><span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;some text&quot;</span> &gt; example.txt 
+<span class="gp">$  </span>cat example.txt 
 <span class="go">some text</span>
-<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;new text&quot;</span> &gt; example.txt 
-<span class="gp">$</span>  cat example.txt 
+<span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;new text&quot;</span> &gt; example.txt 
+<span class="gp">$  </span>cat example.txt 
 <span class="go">new text</span>
-<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;append&quot;</span> &gt;&gt; example.txt
-<span class="gp">$</span>  cat example.txt 
+<span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;append&quot;</span> &gt;&gt; example.txt
+<span class="gp">$  </span>cat example.txt 
 <span class="go">new text</span>
 <span class="go">append</span>
 </code></pre></div>
-
-
 <p>若文件已存在，使用 <code>&gt;</code> 总是覆盖文件，使用 <code>&gt;&gt;</code> 可附加一行。</p>
 <h3 id="ls">ls 显示更多信息</h3>
 <p>ls 最常用的选项有：</p>
@@ -1187,7 +1301,7 @@
 <li><code>-a</code> 显示所有文件，包括隐藏文件</li>
 <li><code>-l</code> 使用长列表格式，将显示更多文件信息</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  ls -al ~
+<div class="highlight"><pre><span></span><code><span class="gp">$  </span>ls -al ~
 <span class="go">total 148</span>
 <span class="go">drwxr-xr-x 3 linux-20 linux-20  4096 Feb 16 14:11 .</span>
 <span class="go">drwxr-xr-x 9 root     root      4096 Feb 18 12:57 ..</span>
@@ -1203,8 +1317,6 @@
 <span class="go">-rw------- 1 linux-20 linux-20  1420 Feb 16 20:56 project</span>
 <span class="go">...</span>
 </code></pre></div>
-
-
 <h2 id="_2">目录和文件操作</h2>
 <ul>
 <li><code>mkdir</code> 创建目录</li>
@@ -1213,41 +1325,37 @@
 <li><code>mv</code> 移动文件</li>
 <li><code>rm</code> 删除文件</li>
 </ul>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  mkdir linux-20
-<span class="gp">$</span>  <span class="nb">cd</span> linux-20
-<span class="gp">$</span>  
-<span class="gp">$</span>  touch foo
-<span class="gp">$</span>  cp foo foo-2
-<span class="gp">$</span>  ls
+<div class="highlight"><pre><span></span><code><span class="gp">$  </span>mkdir linux-20
+<span class="gp">$  </span><span class="nb">cd</span> linux-20
+<span class="gp">$  </span>
+<span class="gp">$  </span>touch foo
+<span class="gp">$  </span>cp foo foo-2
+<span class="gp">$  </span>ls
 <span class="go">foo  foo-2</span>
-<span class="gp">$</span>  mv foo bar
-<span class="gp">$</span>  ls
+<span class="gp">$  </span>mv foo bar
+<span class="gp">$  </span>ls
 <span class="go">bar  foo-2</span>
-<span class="gp">$</span>  rm bar foo-2
+<span class="gp">$  </span>rm bar foo-2
 </code></pre></div>
-
-
 <h3 id="ln">ln 创建文件链接</h3>
 <p><code>ln</code> 用于创建文件链接，默认创建硬链接，<code>ln -s</code> 可以创建软链接。请看下面的例子：</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  <span class="c1"># 创建 foo 文件，并为其创建硬链接和软链接</span>
-<span class="gp">$</span>  touch foo
-<span class="gp">$</span>  ln foo foo-ln
-<span class="gp">$</span>  ln -s foo bar
-<span class="gp">$</span>  ls -l
+<div class="highlight"><pre><span></span><code><span class="gp">$  </span><span class="c1"># 创建 foo 文件，并为其创建硬链接和软链接</span>
+<span class="gp">$  </span>touch foo
+<span class="gp">$  </span>ln foo foo-ln
+<span class="gp">$  </span>ln -s foo bar
+<span class="gp">$  </span>ls -l
 <span class="go">lrwxrwxrwx 1 linux-20 linux-20 3 Feb 18 16:49 bar -&gt; foo</span>
 <span class="go">-rw-r--r-- 2 linux-20 linux-20 0 Feb 18 16:49 foo</span>
 <span class="go">-rw-r--r-- 2 linux-20 linux-20 0 Feb 18 16:49 foo-ln</span>
-<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;text for foo&quot;</span> &gt; foo
-<span class="gp">$</span>  <span class="nb">echo</span> <span class="s2">&quot;append for bar&quot;</span> &gt;&gt; bar
-<span class="gp">$</span>  cat foo-ln
+<span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;text for foo&quot;</span> &gt; foo
+<span class="gp">$  </span><span class="nb">echo</span> <span class="s2">&quot;append for bar&quot;</span> &gt;&gt; bar
+<span class="gp">$  </span>cat foo-ln
 <span class="go">text for foo</span>
 <span class="go">append for bar</span>
-<span class="gp">$</span>  cat bar
+<span class="gp">$  </span>cat bar
 <span class="go">text for foo</span>
 <span class="go">append for bar</span>
 </code></pre></div>
-
-
 <p><code>ls -l</code> 可以明显看到软链接的关系，而硬链接不能直观看出来。不管是硬链接还是软链接，都可以对其读写，使得一个文件有多个访问路径。</p>
 <h2 id="_3">查看文件内容</h2>
 <p>前面已经介绍了使用 <code>cat</code> 查看文件内容，<code>cat</code> 一次性将文件内容打印出来，如果文件有数页或更多时则不太好用。这里还有几个命令可以查看文件：</p>
@@ -1261,33 +1369,29 @@
 <p><code>top</code> 可查看所有进程和系统资源信息，进入后可翻页，按 <code>q</code> 退出。</p>
 <p><code>ps</code> 可以查看当前进程 (当前 shell 进程和此时运行的 ps 进程)，<code>ps -ef</code> 可以查看所有进程并输出更多信息。</p>
 <p><code>pgrep</code> 可以根据名称搜索进程，<code>pgrep -l firefox</code> 搜索包含关键字 firefox 的进程。<code>-l</code> 仅显示进程名，需要完整显示进程可使用 <code>-a</code> (显示进程完整路径和参数)。默认只匹配进程名 (<code>-l</code> 显示的字串)，<code>-f</code> 可完整匹配 (<code>-a</code> 显示的字串)。请看下面的例子：</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  pgrep -l firefox
+<div class="highlight"><pre><span></span><code><span class="gp">$  </span>pgrep -l firefox
 <span class="go">26658 firefox-esr</span>
-<span class="gp">$</span>  
-<span class="gp">$</span>  pgrep -lf firefox
+<span class="gp">$  </span>
+<span class="gp">$  </span>pgrep -lf firefox
 <span class="go">26658 firefox-esr</span>
 <span class="go">26705 Web Content</span>
 <span class="go">26747 Web Content</span>
 <span class="go">26908 WebExtensions</span>
-<span class="gp">$</span>  
-<span class="gp">$</span>  pgrep -af firefox
+<span class="gp">$  </span>
+<span class="gp">$  </span>pgrep -af firefox
 <span class="go">26658 /usr/lib/firefox-esr/firefox-esr</span>
 <span class="go">26705 /usr/lib/firefox-esr/firefox-esr -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 188430 -parentBuildID 20200206211857 -greomni /usr/lib/firefox-esr/omni.ja -appomni /usr/lib/firefox-esr/browser/omni.ja -appdir /usr/lib/firefox-esr/browser 26658 true tab</span>
 <span class="go">...</span>
 </code></pre></div>
-
-
 <p><code>kill &lt;pid&gt;</code> 可终止进程，<code>kill -9 &lt;pid&gt;</code> 可强制杀死进程，pid 可通过 <code>top</code>、<code>ps</code>、<code>pgrep</code> 看到。</p>
 <h2 id="_4">查看系统资源</h2>
 <h3 id="free">free</h3>
 <p><code>free</code> 可查看物理内存和 swap 使用情况，默认输出的数据以 KB 为单位，<code>-h</code> 选项自动进行单位换算使输出结果便于阅读，<code>-w</code> 支持宽列表输出，输出信息如下：</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  free -hw
+<div class="highlight"><pre><span></span><code><span class="gp">$  </span>free -hw
 <span class="go">              total        used        free      shared     buffers       cache   available</span>
 <span class="go">Mem:          7.7Gi       4.3Gi       1.2Gi       544Mi       629Mi       1.5Gi       2.6Gi</span>
 <span class="go">Swap:          14Gi       853Mi        14Gi</span>
 </code></pre></div>
-
-
 <p>下面是输出信息中的部分字段的解释：</p>
 <ul>
 <li><code>total</code> 总内存容量。</li>
@@ -1297,7 +1401,7 @@
 </ul>
 <h3 id="df">df</h3>
 <p><code>df</code> 可查看磁盘使用情况，<code>-h</code> 选项自动进行单位换算使输出结果便于阅读，<code>-T</code> 选项输出文件系统类型，输出信息如下：</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  df -hT
+<div class="highlight"><pre><span></span><code><span class="gp">$  </span>df -hT
 <span class="go">Filesystem            Type      Size  Used Avail Use% Mounted on</span>
 <span class="go">/dev/mapper/VG01-root ext4       28G   11G   16G  41% /</span>
 <span class="go">/dev/sda1             ext2      938M  109M  782M  13% /boot</span>
@@ -1307,12 +1411,10 @@
 <span class="go">tmpfs                 tmpfs     3.9G  174M  3.7G   5% /dev/shm</span>
 <span class="go">…</span>
 </code></pre></div>
-
-
 <h2 id="_5">网络工具</h2>
 <h3 id="ip-address">ip address</h3>
 <p><code>ip address</code> 可查看网络接口和「ip地址」，输出信息如下：</p>
-<div class="codehilite"><pre><span></span><code><span class="gp">$</span>  ip address
+<div class="highlight"><pre><span></span><code><span class="gp">$  </span>ip address
 <span class="go">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span>
 <span class="go">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span>
 <span class="go">    inet 127.0.0.1/8 scope host lo</span>
@@ -1323,20 +1425,16 @@
 <span class="go">    link/ether d0:7e:35:6a:df:ec brd ff:ff:ff:ff:ff:ff</span>
 <span class="go">    inet 192.168.3.4/24 brd 192.168.3.255 scope global dynamic noprefixroute wlp3s0</span>
 <span class="go">       valid_lft 598755sec preferred_lft 598755sec</span>
-<span class="gp">$</span>  
+<span class="gp">$  </span>
 </code></pre></div>
-
-
 <h3 id="curl">curl 下载文件</h3>
 <p>下载文件可使用 <code>curl</code> 工具，命令格式如下：</p>
-<div class="codehilite"><pre><span></span><code>curl https://github.com/itboon/storage/raw/master/vim/vimrc -L -o vimrc.tmp
+<div class="highlight"><pre><span></span><code>curl https://github.com/itboon/storage/raw/master/vim/vimrc -L -o vimrc.tmp
 </code></pre></div>
-
-
 <p><code>curl</code> 默认只将数据打印出来，<code>-o</code> 用于保存为文件。<code>-L</code> 用于支持网页重定向。</p>
 <h2 id="tar">tar 打包和压缩</h2>
 <p><code>tar</code> 是一款打包工具，打包后的文件称为「tar包」。下面是最常用的几项操作：</p>
-<div class="codehilite"><pre><span></span><code><span class="c1"># 将 foo 目录打包为 foo.tar</span>
+<div class="highlight"><pre><span></span><code><span class="c1"># 将 foo 目录打包为 foo.tar</span>
 tar -c -f foo.tar foo
 
 <span class="c1"># 打包并使用 gzip 压缩</span>
@@ -1351,8 +1449,6 @@ tar -x -f foo.tar
 <span class="c1"># 释放文件到指定文件夹</span>
 tar -x -f foo.tar -C /tmp
 </code></pre></div>
-
-
 <p>选项解释：</p>
 <ul>
 <li><code>-c</code> 创建「tar包」。</li>
@@ -1361,88 +1457,87 @@ tar -x -f foo.tar -C /tmp
 <li><code>-f</code> 指定「tar包」文件名。</li>
 </ul>
 <p><code>tar</code> 还支持简洁的写法，例如：</p>
-<div class="codehilite"><pre><span></span><code>tar cf foo.tar foo
+<div class="highlight"><pre><span></span><code>tar cf foo.tar foo
 tar tf foo.tar
 tar xf foo.tar
 </code></pre></div>
-                
-              
-              
-                
 
 
-              
-            </article>
-          </div>
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
+        
       </main>
       
-        
-<footer class="md-footer">
+        <footer class="md-footer">
   
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
         
-          <a href="../choose-shell/" title="1.2 选择 shell" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+        <a href="../choose-shell/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 1.2 选择 shell" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              1.2 选择 shell
             </div>
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  上一页
-                </span>
-                1.2 选择 shell
-              </div>
-            </div>
-          </a>
+          </div>
+        </a>
+      
+      
         
-        
-          <a href="../shell-env/" title="1.4 环境变量" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  下一页
-                </span>
-                1.4 环境变量
-              </div>
+        <a href="../shell-env/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1.4 环境变量" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              1.4 环境变量
             </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        Made with
-        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-          Material for MkDocs
-        </a>
-      </div>
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
       
     </div>
   </div>
 </footer>
       
     </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
     
-      <script src="../../assets/javascripts/vendor.df0def68.min.js"></script>
-      <script src="../../assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u590d\u5236", "clipboard.copied": "\u5df2\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\uff0c\\u3002]+", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c"}</script>
-      
-      <script>
-        app = initialize({
-          base: "../..",
-          features: [],
-          search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.5eca75d3.min.js"
-          }, typeof search !== "undefined" && search)
-        })
-      </script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.48f2be22.min.js"></script>
       
     
   </body>
