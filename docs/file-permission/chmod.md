@@ -21,7 +21,7 @@ chmod a=rw file
 # 清空其他用户的写权限
 chmod o-w file
 
-# 增加 onwer 执行权限
+# 增加 owner 执行权限
 chmod u+x file
 
 # owner 可读写，group 和其他用户没有权限
@@ -36,7 +36,7 @@ chmod u=rw,go= file
 
 用户部分：
 
-- `u` user (onwer)
+- `u` user (owner)
 - `g` group
 - `o` 其他用户
 - `a` 所有用户，等同于 `ugo`
@@ -104,7 +104,7 @@ chmod 644 file
 
 ``` shell-session
 $  mkdir foo private public
-$  # private 目录，只有 onwer 具有权限
+$  # private 目录，只有 owner 具有权限
 $  chmod 0700 private
 $  # public 目录，所有用户具有权限，但只有 owner 可删除
 $  chmod 1777 public
